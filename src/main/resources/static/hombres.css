@@ -1,0 +1,113 @@
+/* Estilos generales */
+
+body {
+    background-image: url('https://media.istockphoto.com/id/1097185952/es/foto/fondo-de-textura-de-piso-de-madera-blanca.jpg?s=170667a&w=0&k=20&c=tLoiE2SUPIy4FAvvq9eKWZiDbuh1amDTQbS16XK7cTU=');
+    /*font-family: Arial, sans-serif;*/
+    font-size: 16px;
+    line-height: 1.5;
+    margin:100;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    margin: 10;
+    padding: 0;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+button:hover {
+    background-color: #3E8E41;
+}
+
+/* Estilos para el encabezado */
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el contenido principal */
+
+main section {
+    margin-bottom: 40px;
+}
+
+main section ul li {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+}
+
+main section ul li:last-child {
+    margin-right: 0;
+}
+
+main section ul li img {
+    display: block;
+    max-width: 100%;
+}
+
+main section ul li h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+main section ul li p {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Estilos para el pie de página */
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
