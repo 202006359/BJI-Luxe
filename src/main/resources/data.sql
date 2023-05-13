@@ -6,3 +6,7 @@ INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(4,'VESTIDO BLANCO','${https
 INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(5,'VESTIDO NEGRO','${https://puravidaclothes.com/16163-large_default/vestido-clavage-negro.jpg}', 50);
 INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(6,'VESTIDO VERDE','${https://www.logyz.com/wp-content/uploads/2022/09/the-are-vestido-mrs-taylor-verde-vestidos-mujer.jpg}', 60);
 
+INSERT INTO USUARIOS (USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user1', 'contrasena1', null); 
+-- si en un atributo como contraseña ponemos antes '{noop}contraseña' pues a este texto "contraseña" no se leva a Hashear para esconder la contraseña
+INSERT INTO USUARIOS (USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user2', 'contrasena2', 'Madrid');
+INSERT INTO USUARIOS(USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user0', 'CdK1033/qww=', 'Somo') --la contraseña es user0, pero encriptada
