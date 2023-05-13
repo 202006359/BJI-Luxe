@@ -12,7 +12,7 @@ INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(106,'VESTIDO VERDE','${http
 INSERT INTO USUARIOS (USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user1', 'contrasena1', null); 
 -- si en un atributo como contraseña ponemos antes '{noop}contraseña' pues a este texto 'contraseña' no se leva a Hashear para esconder la contraseña
 INSERT INTO USUARIOS (USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user2', 'contrasena2', 'Madrid');
-INSERT INTO USUARIOS(USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user0', 'CdK1033/qww=', 'Somo') --la contraseña es user0, pero encriptada
+INSERT INTO USUARIOS(USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user0', 'CdK1033/qww=', 'Somo'); --la contraseña es user0, pero encriptada
 
 
 
