@@ -301,16 +301,13 @@ public class UserController{
     EndPoint usado para comprobar la informacion de usuarios en la base de datos
     En la practica esta funcion no es utiilzada por lo que se deja comentada
 **/
-/*
+
     @GetMapping("/users")
     public ResponseEntity<Iterable<UserModel>> retrieveAll()
     {
         return new ResponseEntity<Iterable<UserModel>>(userService.retrieveAll(), HttpStatus.OK);    
     }
 
-*/
-
-    //@GetMapping("/create_user") public String a() { return "FormularioSignUp";}
 
     
     boolean isAlphanumeric(String check)

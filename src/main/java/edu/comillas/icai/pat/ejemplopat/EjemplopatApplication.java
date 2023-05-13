@@ -5,7 +5,10 @@
  * which accompanies this distribution
  *
  * Contributors:
- *     Universidad de Comillas - ICAI
+ * 		Javier del Aguila
+ * 		Beatriz Ordoñez
+ * 		Ivan Sanchez
+ * 
  *******************************************************************************/
 
 

@@ -4,7 +4,9 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESedeKeySpec;
-import org.apache.commons.codec.binary.Base64;
+//import org.apache.commons.codec.binary.Base64;
+
+import org.apache.tomcat.util.codec.binary.Base64;
 
 /***
  * Class that encrypts and decrypts string using base64
@@ -45,7 +47,8 @@ public class PasswordEncrypter {
             cipher.init(Cipher.ENCRYPT_MODE, key);
             byte[] plainText = unencryptedString.getBytes(UNICODE_FORMAT);
             byte[] encryptedText = cipher.doFinal(plainText);
-            encryptedString = new String(Base64.encodeBase64(encryptedText));
+            encryptedString = new String(Base64.encodeBase64(encryptedText, false));
+            //encryptedString = new String(Base64.encodeBase64(encryptedText));
         } catch (Exception e) {
             e.printStackTrace();
         }
