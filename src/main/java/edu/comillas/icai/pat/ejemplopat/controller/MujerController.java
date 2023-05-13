@@ -6,7 +6,6 @@ import edu.comillas.icai.pat.ejemplopat.service.MujerService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import edu.comillas.icai.pat.ejemplopat.service.impl.*;
 
 
 @RestController

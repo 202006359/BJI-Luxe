@@ -55,39 +55,14 @@ window.onload = function getProductos()
              `<p>$${data[5].precio}</p>`
     document.getElementById("prenda6").innerHTML = html6;
     datos.push(data);
-    console.log(datos);
-    console.log(datos[0][3].nombre);
-    console.log("HOOOOLA");
+    //console.log(datos);
+    //console.log(datos[0][3].nombre);
+    //console.log("HOOOOLA");
   })
 
 }
 
-/*
-function carrito(){
-  const pedido = {
-    id: datos[0][param].id,
-    nombre: datos[0][param].nombre,
-    precio: datos[0][param].precio,
-  };
 
-fetch(url, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(data)
-})
-  .then(response => response.json())
-  .then(data => {
-    // Manejar la respuesta del servidor
-    console.log(data);
-  })
-  .catch(error => {
-    // Manejar errores de la solicitud
-    console.error(error);
-  });
-}
-*/
 
 async function anadirCarrito(param)
 {
@@ -95,7 +70,7 @@ async function anadirCarrito(param)
   const event = window.event;
   event.preventDefault();
   const pedido = {
-    id: datos[0][param].id,
+    id_producto: datos[0][param].id,
     nombre: datos[0][param].nombre,
     precio: datos[0][param].precio,
   };
