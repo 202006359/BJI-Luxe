@@ -1,5 +1,7 @@
 package edu.comillas.icai.pat.ejemplopat.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,11 @@ public class PedidoServiceImpl implements PedidoService{
     public Pedido anadirCarrito(Pedido pedido)
     {
         return pedidoRepository.save(pedido);
+    }
+
+    @Override
+    public List<Pedido> getAllCarrito(){
+        return pedidoRepository.getAllCarrito();
     }
 
 

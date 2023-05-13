@@ -19,14 +19,13 @@ public class Pedido
 	private String nombre;
 
     @Column("PRECIO")
-	private Integer precio;
+	private Float precio;
 
-    public Pedido(Long id_producto, String nombre, Integer precio) {
+    public Pedido(Long id_producto, String nombre, Float precio) {
         this.id_producto= id_producto;
 		this.nombre = nombre;
 		this.precio = precio;
 	}
-
 
     public Long getId_prod() {
 		return id;
@@ -52,11 +51,11 @@ public class Pedido
 		this.nombre = nombre;
 	}
 
-	public Integer getPrecio() {
+	public Float getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(Integer precio) {
+	public void setPrecio(Float precio) {
 		this.precio = precio;
 	}
 
