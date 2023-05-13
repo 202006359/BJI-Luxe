@@ -9,3 +9,16 @@ INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(106,'VESTIDO VERDE','${http
 
 
 
+INSERT INTO USUARIOS (USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user1', 'contrasena1', null); 
+-- si en un atributo como contraseña ponemos antes '{noop}contraseña' pues a este texto 'contraseña' no se leva a Hashear para esconder la contraseña
+INSERT INTO USUARIOS (USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user2', 'contrasena2', 'Madrid');
+INSERT INTO USUARIOS(USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user0', 'CdK1033/qww=', 'Somo') --la contraseña es user0, pero encriptada
+
+
+
+INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(301, 'Reloj de cuarzo', 'https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/07/18/15634474847872.jpg', 74.95);
+INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(302, 'Colgante estrellado', 'https://sargadelos.com/58090-large_default/colgante-estrela.jpg', 14.95);
+INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(303, 'Pulsera artesanal', 'https://tiendasolidariasjd.org/2051-thickbox_default/pulsera-rosa.jpg', 7.50);
+INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(304, 'Reloj Casio rosa vintage', 'https://www.joyeriavictor.com/16105-thickbox_default/reloj-casio-vintage-pink-transparente-f91-rosa.jpg', 47.50);
+INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(305, 'Colgante corazon', 'https://www.aristocrazy.com/dw/image/v2/BCBK_PRD/on/demandware.static/-/Sites-Aristocrazy-master-catalog/default/dwe554ab3f/images/hi-res/J05162-02-ROJENA-3.jpg?sw=1200&sh=1200&sm=fit', 22.25);
+INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(306, 'Pulsera esmeralda', 'https://joyerialago.com/6071-large_default_2x/pulsera-swarovski-crystaldust-verde.jpg', 30.15);
