@@ -1,5 +1,9 @@
 package edu.comillas.icai.pat.ejemplopat.service;
 
-public class PedidoService {
+import edu.comillas.icai.pat.ejemplopat.dao.Pedido;
+
+public interface PedidoService {
+
+    Pedido anadirCarrito(Pedido pedido);
     
 }
