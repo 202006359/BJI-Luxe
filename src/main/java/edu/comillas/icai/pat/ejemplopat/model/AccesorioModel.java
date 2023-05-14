@@ -4,7 +4,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-
 @Table("ACCESORIOS")
 public class AccesorioModel{
 
@@ -88,9 +87,20 @@ public class AccesorioModel{
 
     @Override
     public String toString() {
-        return nombre + ", por tan solo " + precio + "€";
+        return "[id=" + id + ", nombre=" + nombre + ", dir_image=" + dir_image + ", precio=" + precio
+                + "]";
     }
-    
+
+    public String toJson() {
+        String json = "{";
+        json += "\"id\":" + id + ",";
+        json += "\"nombre\":\"" + nombre + "\",";
+        json += "\"dir_image\":\"" + dir_image + "\",";
+        json += "\"precio\":" + precio;
+        json += "}";
+        return json;
+    }
+
 
 
 
