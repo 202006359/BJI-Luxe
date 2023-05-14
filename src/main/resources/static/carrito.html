@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html>
 <head>
+    <title>Carrito</title>
 	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MI PRIMERA PAGINA</title>
-    <link rel="stylesheet" href="./mujeres.css">
-	<link rel="stylesheet" href="./CSS/style_common.css">
-
-    <script src="./mujeres.js"></script>
+    <link rel="stylesheet" href="./CSS/style_common.css">
+	<link rel="stylesheet" href="./CSS/AccesoriosCSS.css">
 </head>
+
 <body>
 	<header>
 		<h1>OUTLET ~ TIENDA DE STOCK LIMITADO</h1>
@@ -49,79 +45,39 @@
 	
 				</li>
 				<li><a href="./carrito.html">Carrito</a></li>
-				<li><a href="">Pedidos</a></li>
+                <li><a href="">Pedidos</a></li>
 			</ul>
 		</nav>
 	</header>
 
-	<main>
-		<section>
-
-			<h2>Ropa para mujeres</h2>
-			<ul>
-				
-	
-
-                <li id="prenda1">
-
-				</li>
-				<button onclick="anadirCarrito(0)">Añadir al carrito</button>
-				
-				
-				<li></li>
-
-                <li id="prenda2">
-				</li>
-
-				<button onclick="anadirCarrito(1)">Añadir al carrito</button>
-
-				
-				<li></li>
-
-                <li id="prenda3">
-				</li>
-				<button onclick="anadirCarrito(2)">Añadir al carrito</button>
-
-				
-             </ul>
-		 </section>
-		 
-         <section>
-			<ul>
-				<li></li>
-
-                <li id="prenda4">
-				</li>
-				<button onclick="anadirCarrito(3)">Añadir al carrito</button>
-
-				<li></li>
-				<li></li>
-				<li></li>
-
-
-                <li id="prenda5">
-				</li>
-				<button onclick="anadirCarrito(4)">Añadir al carrito</button>
-
-				<li></li>
-				<li></li>
-				<li></li>
 
 
 
-                <li id="prenda6">
+    <main>
+        <h1>Tu carrito actual</h1>
 
-				</li>
-				<button onclick="anadirCarrito(5)">Añadir al carrito</button>
 
-           
-			</ul>
-		</section>
+        <table id="table_prod"> 
+			<thead>
+				<th>Producto</th>
+				<th>Precio</th>
+				<!--<th>Cantidad</th>-->
+			</thead>
 
-	</main>
+			<tbody id="table_carrito">
+
+			</tbody>
+		</table>
+
+
+
+    </main>
+
 	<footer>
 		<p>Derechos reservados © 2023 Tienda de ropa</p>
 	</footer>
-</body>
-</html>
 
+
+</body>
+	<script type="text/javascript" src=".\JS\carrito.js"></script>
+</html>

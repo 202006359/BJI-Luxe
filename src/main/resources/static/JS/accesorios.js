@@ -86,6 +86,6 @@ function añadirAlCarrito(id)
     })
     .catch(function(error)
     {
-
+        console.log(error);
     })
 };

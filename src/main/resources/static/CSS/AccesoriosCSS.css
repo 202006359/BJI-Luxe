@@ -2,6 +2,11 @@ body{
     background-image: url('https://media.istockphoto.com/id/1097185952/es/foto/fondo-de-textura-de-piso-de-madera-blanca.jpg?s=170667a&w=0&k=20&c=tLoiE2SUPIy4FAvvq9eKWZiDbuh1amDTQbS16XK7cTU=');
 
 }
+
+h1{
+    text-align: center;
+}
+
 div.gridLayout{
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas con el mismo ancho */
