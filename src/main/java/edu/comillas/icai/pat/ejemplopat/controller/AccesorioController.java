@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.comillas.icai.pat.ejemplopat.model.AccesorioModel;
-import edu.comillas.icai.pat.ejemplopat.service.impl.AccesorioServiceImpl;
+import edu.comillas.icai.pat.ejemplopat.service.AccesorioService;
 
 @RestController
 public class AccesorioController {
 
     @Autowired
-    private AccesorioServiceImpl accesorio_service;
+    private AccesorioService accesorio_service;
 
     @GetMapping("/accesorios")
     public ResponseEntity<ArrayList<AccesorioModel>> cargarPagina()

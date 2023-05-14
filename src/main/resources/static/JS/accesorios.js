@@ -11,11 +11,8 @@ function cargarProductos()
     })
     .then(function(data)
     {
-        
-        let accesorios = JSON.parse(data);
-        
-
-        let n_grids= Math.ceil(accesorios.length/3);
+        let accesorios = JSON.parse(data);   
+        //let n_grids= Math.ceil(accesorios.length/3);
 
         for(let i=0;i<accesorios.length; i++)
         {
