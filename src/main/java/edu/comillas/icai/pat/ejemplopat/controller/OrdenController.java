@@ -9,7 +9,7 @@ import edu.comillas.icai.pat.ejemplopat.dao.Orden;
 import edu.comillas.icai.pat.ejemplopat.service.OrdenService;
 
 @RestController
-public class PedidosController {
+public class OrdenController {
 
     @Autowired
     private OrdenService pedidosService;
