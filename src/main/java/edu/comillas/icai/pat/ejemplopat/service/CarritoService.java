@@ -6,6 +6,6 @@ import edu.comillas.icai.pat.ejemplopat.dao.Carrito;
 
 public interface CarritoService {
 
-    Carrito anadirCarrito(Carrito pedido);
+    Carrito anadirCarrito(Carrito carrito);
     List<Carrito> getAllCarrito();
 }

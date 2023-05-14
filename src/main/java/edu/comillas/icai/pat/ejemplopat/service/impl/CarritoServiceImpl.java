@@ -14,18 +14,17 @@ public class CarritoServiceImpl implements CarritoService{
     
 
     @Autowired
-    private CarritoRepository pedidoRepository; 
+    private CarritoRepository carritoRepository; 
     
     @Override
-    public Carrito anadirCarrito(Carrito pedido)
+    public Carrito anadirCarrito(Carrito carrito)
     {
-        return pedidoRepository.save(pedido);
+        return carritoRepository.save(carrito);
     }
 
     @Override
     public List<Carrito> getAllCarrito(){
-        return pedidoRepository.getAllCarrito();
+        return carritoRepository.getAllCarrito();
     }
-
 
 }
