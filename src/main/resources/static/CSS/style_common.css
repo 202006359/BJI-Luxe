@@ -59,6 +59,35 @@ button:hover {
 
 
 
+.menu{
+  display: flex; /* Asi creamos una barra */
+  list-style: none;
+  margin: 0;
+  background: #333;
+  padding: 0.1em; /*Area  de relleno en los 4 lados de un elemento a la vez
+  /* em cambia todos a la vez*/
+  justify-content: center; /*centra las cajas del menu*/
+
+}
+
+.menu li{
+  flex: auto;  /*flex-glox \ flex-shrink \ flex-basics */
+  color:white;
+
+}
+
+.menu li:hover{  /*Modifica lo que ocurre cuando paso el cursor por encima*/
+  background: rgb(46, 90, 44);
+}
+
+.menu a{
+  text-align: center;
+  display: block;
+  padding: 5%;
+  color: white;
+  user-select: none;
+}
+
 
 
 
