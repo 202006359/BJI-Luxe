@@ -143,6 +143,105 @@ public class UserController{
 
 
 
+    
+
+    @PutMapping("verify_user")
+    public ResponseEntity<Boolean> existsUser(@RequestBody String body_html)
+    {
+        String message="";
+        HashMap<String,String> parametros= new  HashMap<String,String>();
+        String[] data=body_html.split(DIV_HTML);
+        for(String s: data)
+        {
+            String[] key_value=s.split("=");
+            parametros.put(key_value[0],key_value[1]);
+        }
+        String username = parametros.get(username_key);
+        String password = parametros.get(password_key);
+        String password_repeat = parametros.get(password_repeat_key);
+
+        if (!isAlphanumeric(username))
+        {
+            message = "\nError, el nombre de usuario no puede contener caracteres especiales, solo puede estar formado por letras y numeros.";
+//            return new ResponseEntity<String>(message,HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
+
+        }
+        else if (!password.equals(password_repeat))
+        {
+            message = "\nError, las contraseñas no son iguales.";
+            //return new ResponseEntity<String>(message,HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
+
+        }
+        else//ha pasado los checks
+        {
+            try
+            {   //Encriptamos la contraseña para verificar que es igual a la contraseña encriptada anteriormente
+                PasswordEncrypter encriptacion= new PasswordEncrypter();
+                String password_encrypt= encriptacion.encrypt(password);
+                boolean done= userService.checkCredencialesUser(username, password_encrypt);
+
+                if(done)//si ha ido bien, es el
+                {
+                    message="Inicio de sesión correcto.\n";
+                    //return new ResponseEntity<String>(message,HttpStatus.OK);
+                    return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+
+                }
+                else
+                {
+                    message="Error, usuario y/o contraseña incorrectos";
+                    //return new ResponseEntity<String>(message,HttpStatus.BAD_REQUEST);
+                    return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
+
+                }
+            }
+            catch(Exception e)
+            { 
+                System.out.println(e);
+                message="Ha habido un error en el servidor";
+                //return new ResponseEntity<String>(message,HttpStatus.SERVICE_UNAVAILABLE);
+                return new ResponseEntity<Boolean>(false,HttpStatus.SERVICE_UNAVAILABLE);
+
+            }        
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -83,9 +83,11 @@ function añadirAlCarrito(id)
     method: 'POST',
     headers: {'Content-Type': 'application/json'},   body: JSON.stringify(carrito)  })
     console.log(carrito);
+    alert("El producto ha sido agreado al carrito con exito");
     })
     .catch(function(error)
     {
+        alert("Ha ocurrido un error, por favor refresca la pagina y vuelva a intentarlo.");
         console.log(error);
     })
 };

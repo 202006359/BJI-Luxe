@@ -61,13 +61,58 @@
 			<thead>
 				<th>Producto</th>
 				<th>Precio</th>
-				<!--<th>Cantidad</th>-->
+				<th>Eliminar articulo</th>
 			</thead>
 
 			<tbody id="table_carrito">
 
 			</tbody>
 		</table>
+
+        <br>
+        <br>
+        <br>
+
+        <h2>Confirma tu pedido</h2>
+        <p>Por favor inicia sesión para confirmar el pedido.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="dato_sin_bordes"> </th>
+                    <th class="dato_sin_bordes"> </th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <tr>
+                    <td class="dato_sin_bordes"> <label id="username_label">Nombre de usuario</label></td>
+                    <td class="dato_sin_bordes"><input id="username" type="text" placeholder="Username" required="required"></td>
+                </tr>
+    
+                <tr>
+                    <td class="dato_sin_bordes"><label>Introduce la contraseña</label></td>
+                    <td class="dato_sin_bordes"><input id="password" onkeyup='check();'  type="password" placeholder="Password" required="required"></td>
+                </tr>
+    
+                <tr>
+                    <td class="dato_sin_bordes"><label id="password_label_r" for="password">Repita la contraseña</label></td>
+                    <td class="dato_sin_bordes"><input id="password_repeat" onkeyup='check();' type="password" placeholder="Repeat Password" required="required"></td>
+                </tr>
+
+                <tr>
+                    <td class="dato_sin_bordes"><p></p></td>
+                    <td class="dato_sin_bordes"><button id="btn_check_user">Iniciar Sesion</button></td>
+                </tr>
+            </tbody>
+    
+        </table>
+
+        <br>
+        <p id="message"></p>
+        <br>
+
+        <div id="div_ans"></div>
 
 
 
