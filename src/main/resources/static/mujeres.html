@@ -6,20 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MI PRIMERA PAGINA</title>
     <link rel="stylesheet" href="./mujeres.css">
+	<link rel="stylesheet" href="./CSS/style_common.css">
+
     <script src="./mujeres.js"></script>
 </head>
 <body>
 	<header>
 		<h1>OUTLET ~ TIENDA DE STOCK LIMITADO</h1>
 		<nav>
-			<ul>
-				<li><a href="./Index.html">Inicio</a></li>
-				<li><a href="">Mujeres</a></li>
-				<li><a href="./hombres.html">Hombres</a></li>
-				<li><a href="./accesorios.html">Accesorios</a></li>
-				<li><a href="">Contacto</a></li>
+			<ul class="menu">
+				<li><a href="./index.html">Inicio</a></li>
+
+				<li>
+					<a style="cursor:pointer" onclick="Alternar()
+						function Alternar(){ 
+							let ul= document.getElementById('store_options');
+							if (ul.style.display=='none'){ul.style.display='';}
+							else{ul.style.display='none';} 
+						}" 
+					>Tienda</a>
+						<ul style="display:none" id="store_options" class="menu">
+							<li>                 <a href="./mujeres.html">Mujeres</a></li>
+							<li>                 <a href="./hombres.html">Hombres</a></li>
+							<li>                 <a href="./accesorios.html">Accesorios</a></li>
+						</ul>
+				</li>
+
+				<li>
+					<a style="cursor:pointer" onclick="Alternar()
+						function Alternar(){ 
+							let ul= document.getElementById('user_options');
+							if (ul.style.display=='none'){ul.style.display='';}
+							else{ul.style.display='none';} 
+						}" 
+					>Users</a>
+						<ul style="display:none" id="user_options" class="menu">
+							<li>    <a href="./FormularioSignUp.html">Crear usuario</a>		</li>
+							<li>    <a href="./UserSearcher.html">Buscar usuarios</a>  		</li>
+							<li>    <a href="./Update_user.html">Actualizar tu usuario</a>	</li>
+							<li>	<a href="./Delete_user.html">Borrar tu usuario</a> 		</li>
+						</ul>
+	
+				</li>
+				<li><a href="">Pedidos</a></li>
 			</ul>
-			<h><button id="GuardarCarrito" onclick="getPedido()">Gestionar Carrito</button></h>
 		</nav>
 	</header>
 	<main>
