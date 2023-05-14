@@ -8,6 +8,9 @@ import edu.comillas.icai.pat.ejemplopat.dao.Carrito;
 
 public interface CarritoRepository extends CrudRepository <Carrito, Long>
 {
-    @Query("SELECT  * FROM CARRITO")
+    @Query("SELECT * FROM CARRITO")
     List<Carrito> getAllCarrito();
 }
+
+
+

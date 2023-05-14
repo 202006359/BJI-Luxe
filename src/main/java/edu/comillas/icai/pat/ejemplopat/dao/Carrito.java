@@ -27,9 +27,6 @@ public class Carrito
 		this.precio = precio;
 	}
 
-    public Carrito(int i, String nombre2, int j) {
-	}
-
 	public Long getId_prod() {
 		return id;
 	}

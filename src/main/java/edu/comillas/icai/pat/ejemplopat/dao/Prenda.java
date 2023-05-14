@@ -19,6 +19,32 @@ public class Prenda
 	private String url;
 
     @Column("PRECIO")
-	private Integer precio;
+	private Float precio;
+
+	public Prenda(Long id, String nombre,String url, Float precio) {
+        this.id= id;
+		this.nombre = nombre;
+		this.url=url;
+		this.precio = precio;
+
+	}
+
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Prenda other = (Prenda) obj;
+        if (id== null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        return true;
+    }
+
     
 }

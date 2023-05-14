@@ -20,5 +20,13 @@ public class OrdenServiceImpl implements OrdenService {
     {
         return pedidosRepository.save(pedidos);
     }
+
+    @Override
+    public void deletePedido()
+    {
+        pedidosRepository.deleteAll();
+
+    }
+
     
 }

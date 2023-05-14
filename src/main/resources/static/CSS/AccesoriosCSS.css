@@ -1,3 +1,7 @@
+body{
+    background-image: url('https://media.istockphoto.com/id/1097185952/es/foto/fondo-de-textura-de-piso-de-madera-blanca.jpg?s=170667a&w=0&k=20&c=tLoiE2SUPIy4FAvvq9eKWZiDbuh1amDTQbS16XK7cTU=');
+
+}
 div.gridLayout{
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas con el mismo ancho */
@@ -5,6 +9,7 @@ div.gridLayout{
 }
 
 div.produtLayout{
+
     display: grid;
     grid-template-columns: 1fr 1fr; /* Dos columnas con el mismo ancho */
     grid-template-rows: 5fr 1fr 1fr; /* Tres filas con alturas proporcionales */
