@@ -1,3 +1,4 @@
+var datos_stock = [];  
 
 
 function cargarProductos()
@@ -13,6 +14,7 @@ function cargarProductos()
     {
         let accesorios = JSON.parse(data);   
         //let n_grids= Math.ceil(accesorios.length/3);
+        datos_stock.push(accesorios);
 
         for(let i=0;i<accesorios.length; i++)
         {
@@ -35,6 +37,7 @@ function cargarProductos()
             button.classList="button";
             button.id="accesorio"+i;
             button.name=accesorios[i]["id"];
+            button.addEventListener('click', function(){ añadirAlCarrito(accesorios[i]["id"]); }, false);
 
             divProduct.appendChild(img);
             divProduct.appendChild(title);
@@ -47,9 +50,12 @@ function cargarProductos()
     })
     .catch(function(error)
     {
-        let error_p=document.createElement("p");
+        console.log(error);
+        /*
+        let error_p=document.createElement("h2");
         error_p.innerHTML="Error al acceder a la pagina web, por favor intentelo mas tarde."
         div.appendChild("error_p");
+        */
     })
 };
 
@@ -60,5 +66,26 @@ body.addEventListener(onload, cargarProductos());
 
 function añadirAlCarrito(id)
 {
-    
-}
+    fetch("/accesorio/"+id,{method: "GET"})
+    .then(function(res){
+        return res.text();
+    })
+    .then(function(ans)
+    {
+        let data= JSON.parse(ans);
+        var carrito = {
+            id_producto: data.id,
+            nombre: data.nombre,
+            precio: data.precio,
+          };
+
+    fetch('http://localhost:8080/api/carrito', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},   body: JSON.stringify(carrito)  })
+    console.log(carrito);
+    })
+    .catch(function(error)
+    {
+
+    })
+};
