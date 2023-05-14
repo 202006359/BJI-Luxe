@@ -5,4 +5,6 @@ import edu.comillas.icai.pat.ejemplopat.dao.Prenda;
 public interface MujerService 
 {
     List<Prenda> getPrendas();
+
+    List<Prenda> getPrendasHombre();
 }

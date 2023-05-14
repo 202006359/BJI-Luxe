@@ -6,6 +6,16 @@ INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(104,'VESTIDO BLANCO','https
 INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(105,'VESTIDO NEGRO','https://puravidaclothes.com/16163-large_default/vestido-clavage-negro.jpg', 50.7);
 INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(106,'VESTIDO VERDE','https://www.logyz.com/wp-content/uploads/2022/09/the-are-vestido-mrs-taylor-verde-vestidos-mujer.jpg', 60.4);
 
+-- Tabla Hombres
+INSERT INTO HOMBRES(ID,NOMBRE_P, URL, PRECIO) VALUES(201,'Camiseta basica','https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Ffc%2F3d%2Ffc3d74b3aed234b4c0de81b47e922ad3de395552.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/fullscreen', 7.99);
+INSERT INTO HOMBRES(ID,NOMBRE_P, URL, PRECIO) VALUES(202,'Polo con rayas azules','https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202301/05/00112240308440____1__967x1200.jpg', 69);
+INSERT INTO HOMBRES(ID,NOMBRE_P, URL, PRECIO) VALUES(203,'Jersey de lana','https://es.benetton.com/dw/image/v2/BBSF_PRD/on/demandware.static/-/Sites-ucb-master/default/dw2a05bfc2/images/Full_Card_v/Benetton_22A_1002U4407_530_FY_Full_Card_v.jpg?sw=960&sh=1280', 49.95);
+INSERT INTO HOMBRES(ID,NOMBRE_P, URL, PRECIO) VALUES(204,'Camisa de lino','https://cdn.shopify.com/s/files/1/0015/0942/5197/files/37636-LIGHTGREEN-P-2_1527x2200.jpg', 79.90);
+INSERT INTO HOMBRES(ID,NOMBRE_P, URL, PRECIO) VALUES(205,'Pantalones vaqueros','https://static.pullandbear.net/2/photos//2023/V/0/2/p/3688/902/405/3688902405_2_1_8.jpg', 29.99);
+INSERT INTO HOMBRES(ID,NOMBRE_P, URL, PRECIO) VALUES(206,'Pantalones chinos','https://static.zara.net/photos///2022/I/0/2/p/6786/310/710/2/w/750/6786310710_6_1_1.jpg?ts=1666280680211', 22.95);
+
+
+
 INSERT INTO USUARIOS (USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user1', 'contrasena1', null); 
 -- si en un atributo como contraseña ponemos antes '{noop}contraseña' pues a este texto 'contraseña' no se leva a Hashear para esconder la contraseña
 INSERT INTO USUARIOS (USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user2', 'contrasena2', 'Madrid');

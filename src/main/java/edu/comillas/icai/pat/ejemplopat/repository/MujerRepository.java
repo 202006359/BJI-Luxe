@@ -11,4 +11,7 @@ public interface MujerRepository extends CrudRepository<Prenda,Long>
 {
     @Query("SELECT  * FROM MUJERES")
     List<Prenda> getPrendas();
+
+    @Query("SELECT  * FROM HOMBRES")
+    List<Prenda> getPrendasHombres();
 }
