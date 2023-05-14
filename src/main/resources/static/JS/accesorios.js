@@ -15,16 +15,32 @@ function cargarProductos()
         let accesorios = JSON.parse(data);
         
 
-
-        console.log(accesorios);
-        console.log(accesorios.length);
         let n_grids= Math.ceil(accesorios.length/3);
-        console.log(n_grids);
+
         for(let i=0;i<accesorios.length; i++)
         {
-            console.log(accesorios[i].id);
-            console.log(accesorios[i]["id"]);
-            console.log(accesorios[i]);
+
+            var divProduct= document.createElement("div");
+            divProduct.className="produtLayout";
+
+            let img= document.createElement("img");
+            img.src=accesorios[i]["dir_image"];
+            img.classList="photo";
+            let title= document.createElement("p");
+            title.innerHTML=accesorios[i]["nombre"];
+            title.classList="title";
+            let price= document.createElement("p");
+            price.innerHTML=accesorios[i]["precio"];
+            price.classList="price";
+            let button= document.createElement("button");
+            button.innerHTML="Añadir al carrito";
+            button.classList="button";
+
+            divProduct.appendChild(img);
+            divProduct.appendChild(title);
+            divProduct.appendChild(price);
+            divProduct.appendChild(button);
+            div.appendChild(divProduct);
 
         }
 
