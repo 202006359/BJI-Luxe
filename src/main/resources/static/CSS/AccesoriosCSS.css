@@ -1,0 +1,70 @@
+div.gridLayout{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas con el mismo ancho */
+    /* grid-auto-rows: 100px;  altura fija de cada fila */
+}
+
+div.produtLayout{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas con el mismo ancho */
+    grid-template-rows: 5fr 1fr 1fr; /* Tres filas con alturas proporcionales */
+    /*la primera fila tendrá una altura del 75% del espacio disponible, y las otras dos filas se repartirán el 25% restante. 3fr significa que la primera fila ocupará tres partes de las seis partes disponibles (es decir, el 50% + el 25% = 75%), y 1fr significa que las otras dos filas ocuparán una parte de las seis partes disponibles cada una (es decir, el 25% para cada una).*/
+      grid-template-areas:
+      "photo   photo"
+      "title price "
+      "button   button";
+    gap: 7px;
+    padding: 10%;
+    /*text-align: center;*/
+    padding-bottom: 15%;
+
+}
+
+.photo{
+    grid-area: photo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Asi SI crece en tamaño al tener disponible*/
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.title{
+    text-align: center;
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0; /* Asi no crece en tamaño aunque tenga disponible*/
+}
+
+.price{
+    text-align: center;
+    grid-area: price;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Asi no crece en tamaño aunque tenga disponible*/
+}
+
+
+.button{
+    grid-area: button;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Centrar horizontalmente */
+    padding: 5%;
+}
+
+
+
+
