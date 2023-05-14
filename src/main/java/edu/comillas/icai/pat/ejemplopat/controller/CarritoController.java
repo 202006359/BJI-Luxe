@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.comillas.icai.pat.ejemplopat.dao.Pedido;
-import edu.comillas.icai.pat.ejemplopat.service.PedidoService;
+import edu.comillas.icai.pat.ejemplopat.dao.Carrito;
+import edu.comillas.icai.pat.ejemplopat.service.CarritoService;
 //import edu.comillas.icai.pat.ejemplopat.dao;
 
 @RestController
-public class PedidoController
+public class CarritoController
 {
     @Autowired
-    private PedidoService pedidoService; 
+    private CarritoService pedidoService; 
 
     @PostMapping(path = "api/carrito")
-    public ResponseEntity<Pedido> anadirCarrito(@RequestBody Pedido pedido)
+    public ResponseEntity<Carrito> anadirCarrito(@RequestBody Carrito pedido)
     {
-        Pedido newPedido = pedidoService.anadirCarrito(pedido); 
+        Carrito newPedido = pedidoService.anadirCarrito(pedido); 
         return ResponseEntity.ok().body(newPedido);
     }
 
     @GetMapping(path="api/getCarrito")
-    public ResponseEntity<List<Pedido>> getAllCarrito()
+    public ResponseEntity<List<Carrito>> getAllCarrito()
     {
         return ResponseEntity.ok().body(pedidoService.getAllCarrito()); 
     }
