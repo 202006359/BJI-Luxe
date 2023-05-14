@@ -25,7 +25,7 @@ window.onload = function getProductos()
              `<h3>${data[1].nombre}</h3>`+
              `<h3>${data[1].precio} EUR</h3>`
     document.getElementById("prenda2").innerHTML = html2;
-
+  
 
     let html3="";
     html3 += `<img src="${data[2].url}" alt="Mujer 3" height="300em" >`+
