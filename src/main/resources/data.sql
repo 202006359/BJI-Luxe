@@ -20,3 +20,6 @@ INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(303, 'Pulsera artes
 INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(304, 'Reloj Casio rosa vintage', 'https://www.joyeriavictor.com/16105-thickbox_default/reloj-casio-vintage-pink-transparente-f91-rosa.jpg', 40);
 INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(305, 'Colgante corazon', 'https://www.aristocrazy.com/dw/image/v2/BCBK_PRD/on/demandware.static/-/Sites-Aristocrazy-master-catalog/default/dwe554ab3f/images/hi-res/J05162-02-ROJENA-3.jpg?sw=1200&sh=1200&sm=fit', 22.25);
 INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(306, 'Pulsera esmeralda', 'https://joyerialago.com/6071-large_default_2x/pulsera-swarovski-crystaldust-verde.jpg', 30.15);
+INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(307, 'Anillo de ceniza volcanica', 'https://eguzkilorejoya.com/10910-large_default/anillo-carbono-negro-1-eguzkilore.jpg', 219);
+INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(308, 'Pendientes hoja dorada', 'https://cdn.shopify.com/s/files/1/1631/3281/products/pendientes-hojas-dorados-cadenas-joyas-mujer-THE-ARE2.jpg?v=1649084093&width=1445', 57.55);
+
