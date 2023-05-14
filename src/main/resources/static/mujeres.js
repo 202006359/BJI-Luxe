@@ -13,7 +13,6 @@ window.onload = function getProductos()
   .then(response => response.json())
   .then(data =>{
 
-  
     let html1="";
     html1 += `<img src="${data[0].url}" alt="Mujer 3" height="300em" >`+
              `<h3>${data[0].nombre}</h3>`+
@@ -58,6 +57,7 @@ window.onload = function getProductos()
     //console.log(datos);
     //console.log(datos[0][3].nombre);
     //console.log("HOOOOLA");
+    
   })
 
 }
@@ -66,10 +66,11 @@ window.onload = function getProductos()
 
 async function anadirCarrito(param)
 {
+console.log(datos_stock);
  try{
   const event = window.event;
   event.preventDefault();
-  const pedido = {
+  const carrito = {
     id_producto: datos_stock[0][param].id,
     nombre: datos_stock[0][param].nombre,
     precio: datos_stock[0][param].precio,
@@ -79,13 +80,12 @@ async function anadirCarrito(param)
   console.log(datos_stock[0][param].nombre);
   console.log(datos_stock[0][param].precio);
 
-
   const response = await fetch('http://localhost:8080/api/carrito', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(pedido)
+    body: JSON.stringify(carrito)
     });
 
   const data = await response.json();
@@ -100,7 +100,6 @@ async function anadirCarrito(param)
 }
   
 
-
 function getPedido()
 {
   var headers = {
@@ -114,24 +113,39 @@ function getPedido()
   .then(response => response.json())
   .then(data =>{
     //datos_pedido.push(data); 
-    let p1 = 0;
-    let p2 = 0;
-    let p3 = 0;
-    let p4 = 0;
-    let p5 = 0;
-    let p6 = 0;
+    let p1 = 0, p2 = 0,p3 = 0,p4 = 0,p5 = 0,p6 = 0;
     console.log(data[0].id_producto);
     for (let i = 0; i < data.length; i++) {
-      if(data[i].id_producto==101){p1++;}
-      if(data[i].id_producto==102){p2++;}
-      if(data[i].id_producto==103){p3++;}
-      if(data[i].id_producto==104){p4++;}
-      if(data[i].id_producto==105){p5++;}
-      if(data[i].id_producto==106){p6++;}
+      if(data[i].id_producto==101){
+        datos_pedido.push([data[i].id_producto,data[i].nombre])
+        p1++;
+      }
+      if(data[i].id_producto==102){
+        datos_pedido.push([data[i].id_producto,data[i].nombre])
+        p2++;
+      }
+      if(data[i].id_producto==103){
+        datos_pedido.push([data[i].id_producto,data[i].nombre])
+        p3++;
+      }
+      if(data[i].id_producto==104){
+        datos_pedido.push([data[i].id_producto,data[i].nombre])
+        p4++;
+      }
+      if(data[i].id_producto==105){
+        datos_pedido.push([data[i].id_producto,data[i].nombre])
+        p5++;
+      }
+      if(data[i].id_producto==106){
+        datos_pedido.push([data[i].id_producto,data[i].nombre])
+        p6++;
+      }
     }
-
+    console.log(datos_pedido);
     const cantidades = [p1,p2,p3,p4,p5,p6];
+    console.log(cantidades);
     anadirPedido(cantidades);
+
 })
 }
 
@@ -140,7 +154,6 @@ async function anadirPedido(cantidades)
 {
  try{
   const event = window.event;
-  event.preventDefault();
   const pedido = {
     id_producto: datos_pedido[0][param].id,
     nombre: datos_pedido[0][param].nombre,
@@ -169,6 +182,8 @@ async function anadirPedido(cantidades)
   console.error(error);
 }
 }
+
+//anadir pedido
 
 
 

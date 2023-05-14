@@ -2,6 +2,7 @@ package edu.comillas.icai.pat.ejemplopat.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,5 +20,15 @@ public class OrdenController {
     {
         return ResponseEntity.ok().body(pedidosService.anadirPedido(pedidos));
     }
+
+    @DeleteMapping("api/delete/pedido")
+    public void eliminartodo() {
+        pedidosService.deletePedido();
+    }
+
+
+
+
+
     
 }
