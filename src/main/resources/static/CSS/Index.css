@@ -4,6 +4,7 @@ body {
 	background-size: cover;
 }
 
+
 header {
 	background-color: #333;
 	color: #fff;
@@ -31,7 +32,6 @@ nav a {
 	color:royalblue;
 }
 
-
     a {
         text-decoration: none;
         color: #333;
@@ -42,56 +42,14 @@ nav a {
     }
     
     main {
+        background-image: url('https://images.unsplash.com/photo-1619059356058-92bab5b09858?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHw%3D&w=1000&q=80');
+        height: 50em;
         max-width: 800px;
-        margin: 0 auto;
+        margin-top: 40px;
+        margin-left: 250px;
         padding: 20px;
     }
-    
-    section {
-        margin-bottom: 40px;
-    }
 
-    
-    h2 {
-        margin-top: 0;
-    }
-    
-    .product {
-        display: inline-block;
-        width: calc(33.33% - 20px);
-        margin-right: 20px;
-        vertical-align: top;
-    }
-    
-    .product:last-child {
-        margin-right: 0;
-    }
-    
-    .product img {
-        max-width: 100%;
-    }
-    
-    .product h3 {
-        margin-top: 10px;
-    }
-    
-    .product p {
-        margin-top: 0;
-    }
-    
-    .product a {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 5px 10px;
-        background-color: #333;
-        color: #fff;
-        border-radius: 4px;
-    }
-    
-    .product a:hover {
-        background-color: #666;
-    }
-    
     footer {
         background-color: #333;
         color: #fff;

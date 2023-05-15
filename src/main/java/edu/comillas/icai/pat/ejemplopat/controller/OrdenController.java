@@ -64,8 +64,6 @@ public class OrdenController {
             }
             //finalmente guardamos el pedido llamando a su service y tal
             return new ResponseEntity<String>("Pedido realizado con exito",HttpStatus.CREATED);
-
-
         }
         else{
             return new ResponseEntity<String>("Error, credenciales del usuario erroneas",HttpStatus.BAD_REQUEST);
