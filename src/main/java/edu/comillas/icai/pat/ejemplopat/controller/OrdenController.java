@@ -1,8 +1,10 @@
 package edu.comillas.icai.pat.ejemplopat.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -35,8 +37,7 @@ public class OrdenController {
         pedidosService.deletePedido();
     }
 
-
-/*
+/* 
     @PostMapping("api/add/pedido")
     public ResponseEntity<String> addPedido(@RequestBody String body) //el body es solo el usuario, el carrito lo pido por aqui
     {
@@ -54,20 +55,25 @@ public class OrdenController {
             String url="api/getCarrito";
             HttpEntity<String> entity_empty = new HttpEntity<String>(headers);
 
-            ResponseEntity<List<Carrito>> response2 = restTemplate.exchange(url, HttpMethod.GET, entity_empty, ResponseEntity<List<Carrito>>);
+            ResponseEntity<List<Carrito>> response2 = restTemplate.exchange(url, HttpMethod.GET, entity_empty,new ParameterizedTypeReference<List<Carrito>>(){});
             List<Carrito> carrito_all = response2.getBody();
-            for(Carrito c : carrito_all)
-            {
-                //aqui chequeamos los repes para meterlo en el pedido
+            HashMap<Long, Integer> orden_items = new HashMap<>();   //long para el id, int para la cantidad de ese objeto
+            for(Carrito c: carrito_all){
+            if (orden_items.get(c.getId())==null)  //aun no existe dentro
+                    orden_items.put(c.getId(),1);
+
+            else //ya esta dentro
+                orden_items.put(c.getId(), orden_items.get(c.getId())+1);
             }
             //finalmente guardamos el pedido llamando a su service y tal
+
             return new ResponseEntity<String>("Pedido realizado con exito",HttpStatus.CREATED);
         }
         else{
             return new ResponseEntity<String>("Error, credenciales del usuario erroneas",HttpStatus.BAD_REQUEST);
         }
     }
- */
-
+ 
+*/
     
 }
