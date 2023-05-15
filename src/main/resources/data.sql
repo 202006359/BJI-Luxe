@@ -1,10 +1,10 @@
 -- Tabla Mujeres --> 
-INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(101,'VESTIDO AZUL','https://gusgusboutique.es/wp-content/uploads/2023/02/Vestido-coctel-corto-Couture-Club-fiesta.png', 50.2);
-INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(102,'VESTIDO ROJO','https://d2tce2xojuu25e.cloudfront.net/2022/10/7J2O2_MARFIL_BARCELONA_1.jpg', 40.9);
-INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(103,'VESTIDO ROSA','https://www.baunda.com/wp-content/uploads/2022/02/2021_5U191_AIRE_BARCELONA_FIESTA_-300x375.jpg', 55);
-INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(104,'VESTIDO BLANCO','https://www.feversave.com/10509-home_default/vestido-ginebra-blanco.jpg', 45);
-INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(105,'VESTIDO NEGRO','https://puravidaclothes.com/16163-large_default/vestido-clavage-negro.jpg', 50.7);
-INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(106,'VESTIDO VERDE','https://www.logyz.com/wp-content/uploads/2022/09/the-are-vestido-mrs-taylor-verde-vestidos-mujer.jpg', 60.4);
+INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(101,'Vestido azul seda','https://gusgusboutique.es/wp-content/uploads/2023/02/Vestido-coctel-corto-Couture-Club-fiesta.png', 50.2);
+INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(102,'Vestido rojo','https://d2tce2xojuu25e.cloudfront.net/2022/10/7J2O2_MARFIL_BARCELONA_1.jpg', 40.9);
+INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(103,'Vestido rosa','https://www.baunda.com/wp-content/uploads/2022/02/2021_5U191_AIRE_BARCELONA_FIESTA_-300x375.jpg', 55);
+INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(104,'Vestido blanco','https://www.feversave.com/10509-home_default/vestido-ginebra-blanco.jpg', 45);
+INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(105,'Vestido negro','https://puravidaclothes.com/16163-large_default/vestido-clavage-negro.jpg', 50.7);
+INSERT INTO MUJERES(ID,NOMBRE_P, URL, PRECIO) VALUES(106,'Vestido verde','https://www.logyz.com/wp-content/uploads/2022/09/the-are-vestido-mrs-taylor-verde-vestidos-mujer.jpg', 60.4);
 
 -- Tabla Hombres
 INSERT INTO HOMBRES(ID,NOMBRE_P, URL, PRECIO) VALUES(201,'Camiseta basica','https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Ffc%2F3d%2Ffc3d74b3aed234b4c0de81b47e922ad3de395552.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/fullscreen', 7.99);

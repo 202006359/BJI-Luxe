@@ -1,7 +1,5 @@
 package edu.comillas.icai.pat.ejemplopat.Controller;
-
-import java.util.ArrayList;
-
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,31 +11,29 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
 import static org.assertj.core.api.BDDAssertions.then;
-
-import edu.comillas.icai.pat.ejemplopat.model.AccesorioModel;
-import edu.comillas.icai.pat.ejemplopat.service.AccesorioService;
+import edu.comillas.icai.pat.ejemplopat.dao.Prenda;
+import edu.comillas.icai.pat.ejemplopat.service.MujerService;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) //se genera un servidor de prueba donde hare las llamadas, en un puerto aleatorio
-public class AccesorioControllerE2ETest {
+public class MujeresStockControllerE2ETest {
     @LocalServerPort
     private int port; //pido el puerto en que esta el server
 
     @Autowired
-    private AccesorioService accService;
+    private MujerService mujerService;
 
     @Autowired
     private TestRestTemplate restTemplate; //te permite hacer llamadas al server de pruebas y recoge la respuesta
 
 
     @Test
-    void getAllAccesorios()
+    void getAllPrendas()
     {
         //Buena busqueda
-        String mapping="/accesorios";
+        String mapping="/api/ropaMujer";
 
-        ArrayList<AccesorioModel> expected= accService.getAll();
+        List<Prenda> expected= mujerService.getPrendas();
 
         //WHEN
         String url="http://localhost:"+ Integer.toString(port)+mapping;
@@ -47,11 +43,11 @@ public class AccesorioControllerE2ETest {
 
 
         //GIVEN
-        ResponseEntity<ArrayList<AccesorioModel>> resul= restTemplate.exchange(
+        ResponseEntity<List<Prenda>> resul= restTemplate.exchange(
             url, 
             HttpMethod.GET,
             entity,
-            new ParameterizedTypeReference<ArrayList<AccesorioModel>>(){});
+            new ParameterizedTypeReference<List<Prenda>>(){});
 
         //CHECK
         then(resul.getStatusCode()).isEqualTo(HttpStatus.OK);

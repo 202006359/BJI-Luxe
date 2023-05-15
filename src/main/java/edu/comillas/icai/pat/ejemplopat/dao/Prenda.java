@@ -21,7 +21,7 @@ public class Prenda
     @Column("PRECIO")
 	private Float precio;
 
-	public Prenda(Long id, String nombre,String url, Float precio) {
+	public Prenda(Long id, String nombre, String url, Float precio) {
         this.id= id;
 		this.nombre = nombre;
 		this.url=url;

@@ -36,8 +36,6 @@ public class OrdenController {
     }
 
 
-
-
 /*
     @PostMapping("api/add/pedido")
     public ResponseEntity<String> addPedido(@RequestBody String body) //el body es solo el usuario, el carrito lo pido por aqui
@@ -69,7 +67,7 @@ public class OrdenController {
             return new ResponseEntity<String>("Error, credenciales del usuario erroneas",HttpStatus.BAD_REQUEST);
         }
     }
-*/
+ */
 
     
 }
