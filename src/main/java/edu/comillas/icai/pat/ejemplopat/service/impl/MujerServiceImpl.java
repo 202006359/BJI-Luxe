@@ -29,5 +29,11 @@ public class MujerServiceImpl implements MujerService
 
         return mujerRepository.getPrendasHombres();
     }
+
+    @Override
+    public Prenda getById(Long id)
+    {
+        return mujerRepository.getById(id);
+    }
     
 }

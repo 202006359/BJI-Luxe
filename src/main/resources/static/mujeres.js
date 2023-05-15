@@ -2,6 +2,9 @@ const datos_stock = [];
 const datos_pedido = [];  
 window.onload = function getProductos()
 {
+  var div=document.getElementById("div_productos");
+  div.innerHTML="";
+
   var headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
@@ -11,9 +14,42 @@ window.onload = function getProductos()
     headers: headers
   })
   .then(response => response.json())
-  .then(data =>{
+  .then(data =>
+    {
+        //let accesorios = JSON.parse(data);   
+        //datos_stock.push(accesorios);
 
-    let html1="";
+        for(let i=0;i<data.length; i++)
+        {
+            var divProduct= document.createElement("div");
+            divProduct.className="produtLayout";
+
+            let img= document.createElement("img");
+            img.src=data[i].url;
+            img.classList="photo";
+            
+            let title= document.createElement("h3");
+            title.innerHTML=data[i].nombre;
+            title.classList="title";
+            let price= document.createElement("p");
+            price.innerHTML=data[i].precio +" EUR";
+            price.classList="price";
+            let button= document.createElement("button");
+            button.innerHTML="Añadir al carrito";
+            button.classList="button";
+            button.id="accesorio"+i;
+            button.name=data[i].id;
+            button.addEventListener('click', function(){ añadirAlCarrito(data[i].id); }, false);
+
+            divProduct.appendChild(img);
+            divProduct.appendChild(title);
+            divProduct.appendChild(price);
+            divProduct.appendChild(button);
+            div.appendChild(divProduct);
+
+        }
+
+    /*let html1="";
     html1 += `<img src="${data[0].url}" alt="Mujer 3" height="300em" >`+
              `<h3>${data[0].nombre}</h3>`+
              `<h3>${data[0].precio} EUR</h3>` 
@@ -26,21 +62,18 @@ window.onload = function getProductos()
              `<h3>${data[1].precio} EUR</h3>`
     document.getElementById("prenda2").innerHTML = html2;
   
-
     let html3="";
     html3 += `<img src="${data[2].url}" alt="Mujer 3" height="300em" >`+
              `<h3>${data[2].nombre}</h3>`+
              `<h3>${data[2].precio} EUR</h3>`
     document.getElementById("prenda3").innerHTML = html3;
  
-  
     let html4="";
     html4 += `<img src="${data[3].url}" alt="Mujer 3" height="300em" >`+
              `<h3>${data[3].nombre}</h3>`+
              `<h3>$${data[3].precio} EUR</h3>`
 
     document.getElementById("prenda4").innerHTML = html4;
-
 
     let html5="";
     html5 += `<img src="${data[4].url}" alt="Mujer 3" height="300em" >`+
@@ -53,17 +86,50 @@ window.onload = function getProductos()
              `<h3>${data[5].nombre}</h3>`+
              `<h3>${data[5].precio} EUR</h3>`
     document.getElementById("prenda6").innerHTML = html6;
+    let button= document.createElement("button");
+    button.innerHTML="Añadir al carrito";
+    button.classList="button";
+    button.id="accesorio"+i;
+    button.name=accesorios[i]["id"];
+    button.addEventListener('click', function(){ añadirAlCarrito(accesorios[i]["id"]); }, false);
     datos_stock.push(data);
     //console.log(datos);
     //console.log(datos[0][3].nombre);
     //console.log("HOOOOLA");
-    
+    */
   })
 
 }
 
+function añadirAlCarrito(id)
+{
+    fetch("api/prenda/"+id,{method: "GET"})
+    .then(function(res){
+        return res.text();
+    })
+    .then(function(ans)
+    {
+        let data= JSON.parse(ans);
+        var carrito = {
+            id_producto: data.id,
+            nombre: data.nombre,
+            precio: data.precio,
+          };
 
+    fetch('http://localhost:8080/api/carrito', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},   body: JSON.stringify(carrito)  })
+    console.log(carrito);
+    alert("El producto ha sido agreado al carrito con exito");
+    })
+    .catch(function(error)
+    {
+        alert("Ha ocurrido un error, por favor refresca la pagina y vuelva a intentarlo.");
+        console.log(error);
+    })
+};
 
+/*
 async function anadirCarrito(param)
 {
 console.log(datos_stock);
@@ -185,5 +251,5 @@ async function anadirPedido(cantidades)
 
 //anadir pedido
 
-
+*/
 

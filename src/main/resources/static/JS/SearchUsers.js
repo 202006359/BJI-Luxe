@@ -7,9 +7,6 @@ usernameInput.addEventListener('keypress', function(event) {
 });
 
 
-
-
-
 var btn_buscar_user = document.getElementById("btn_buscar_user");
 btn_buscar_user.addEventListener("click", search_user);
 

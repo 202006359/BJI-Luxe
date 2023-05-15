@@ -7,4 +7,6 @@ public interface MujerService
     List<Prenda> getPrendas();
 
     List<Prenda> getPrendasHombre();
+    public Prenda getById(Long id);
+
 }
