@@ -16,6 +16,11 @@ public class OrdenServiceImpl implements OrdenService {
     private OrdenRepository pedidosRepository; 
     
     @Override
+    public void insertOrden(Orden pedidos){
+        pedidosRepository.insertOrden(pedidos.getId_user(), pedidos.getId_producto(), pedidos.getNombre(), pedidos.getCantidad());
+    }
+
+    @Override
     public Orden anadirPedido(Orden pedidos)
     {
         return pedidosRepository.save(pedidos);

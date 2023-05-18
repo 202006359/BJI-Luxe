@@ -26,5 +26,12 @@ public class Orden
     @Column("CANTIDAD")
 	private Integer cantidad;
 
+	public Orden(Long id_user, Long id_producto, String nombre, Integer cantidad) {
+		this.id_user = id_user;
+		this.id_producto = id_producto;
+		this.nombre = nombre;
+		this.cantidad = cantidad;
+	}
+
     
 }

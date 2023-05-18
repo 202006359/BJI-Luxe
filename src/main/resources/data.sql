@@ -16,10 +16,10 @@ INSERT INTO HOMBRES(ID,NOMBRE_P, URL, PRECIO) VALUES(206,'Pantalones chinos','ht
 
 
 
-INSERT INTO USUARIOS (USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user1', 'contrasena1', null); 
+INSERT INTO USUARIOS (USER_ID, USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES (400, 'user1', 'contrasena1', null); 
 -- si en un atributo como contraseña ponemos antes '{noop}contraseña' pues a este texto 'contraseña' no se leva a Hashear para esconder la contraseña
-INSERT INTO USUARIOS (USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user2', 'contrasena2', 'Madrid');
-INSERT INTO USUARIOS(USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES ('user0', 'CdK1033/qww=', 'Somo'); --la contraseña es user0, pero encriptada
+INSERT INTO USUARIOS (USER_ID, USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES (401, 'user2', 'contrasena2', 'Madrid');
+INSERT INTO USUARIOS(USER_ID, USERNAME, PASSWORD_ENCRYPTED, NAME_LOCATION) VALUES (402, 'user0', 'CdK1033/qww=', 'Somo'); --la contraseña es user0, pero encriptada
 
 INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(301, 'Reloj de cuarzo', 'https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/07/18/15634474847872.jpg', 74.95);
 INSERT INTO ACCESORIOS(ID, NOMBRE, DIR_IMAGE, PRECIO) VALUES(302, 'Colgante estrellado', 'https://sargadelos.com/58090-large_default/colgante-estrela.jpg', 14.95);

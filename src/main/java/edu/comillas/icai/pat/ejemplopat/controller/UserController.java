@@ -63,12 +63,6 @@ public class UserController{
 
 
 
-
-
-
-
-
-
     //Put porque estoy haciendo cambios en algo que ya existe en mi base de Datos
     @PutMapping("user_update")
     public ResponseEntity<String> confirmUser(@RequestBody String user)
@@ -133,15 +127,6 @@ public class UserController{
 
     }          
     
-
-
-
-
-
-
-
-
-
 
     
 
@@ -208,6 +193,10 @@ public class UserController{
         }
 
     }
+
+
+
+
 
 
 
@@ -384,7 +373,15 @@ public class UserController{
                 }
         }
 
-    }          
+    }    
+    
+    
+    @GetMapping("get_user_id/{username}")
+    public ResponseEntity<Long> getUserIdByUserName(@PathVariable String username){
+         return ResponseEntity.status(HttpStatus.OK).body(userService.getUserByUsername(username).getUserId());
+    }
+
+    
 
 
 
