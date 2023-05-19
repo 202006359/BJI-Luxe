@@ -71,6 +71,7 @@ function obtenerPedidos(event) {
         {
             var totalSum=0;
             var table_all=document.getElementById("table_prod");
+            table_all.innerHTML="";
             orden_items=JSON.parse(data);
 
            var table_head=document.createElement("thead");
