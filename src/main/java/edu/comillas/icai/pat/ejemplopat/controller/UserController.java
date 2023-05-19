@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import edu.comillas.icai.pat.ejemplopat.dao.UserModel;
 import edu.comillas.icai.pat.ejemplopat.dto.UserDTO;
-import edu.comillas.icai.pat.ejemplopat.model.UserModel;
 import edu.comillas.icai.pat.ejemplopat.service.impl.UserServiceImpl;
 import edu.comillas.icai.pat.ejemplopat.util.PasswordEncrypter;
 

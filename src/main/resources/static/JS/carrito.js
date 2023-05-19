@@ -154,6 +154,7 @@ function updateUser(event) {
         })
         .then(function(data)
         {
+            alert(data);
             var h4= document.createElement("h4");
             h4.innerHTML=data;
             div.appendChild(h4);

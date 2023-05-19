@@ -16,7 +16,7 @@ import org.springframework.http.ResponseEntity;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
-import edu.comillas.icai.pat.ejemplopat.model.AccesorioModel;
+import edu.comillas.icai.pat.ejemplopat.dao.AccesorioModel;
 import edu.comillas.icai.pat.ejemplopat.service.AccesorioService;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) //se genera un servidor de prueba donde hare las llamadas, en un puerto aleatorio

@@ -1,4 +1,4 @@
-package edu.comillas.icai.pat.ejemplopat.model;
+package edu.comillas.icai.pat.ejemplopat.dao;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;

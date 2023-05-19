@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import edu.comillas.icai.pat.ejemplopat.model.UserModel;
+import edu.comillas.icai.pat.ejemplopat.dao.UserModel;
 
 //UserModel es el modelo de objeto con el que va a trabajar mi CRUD, y Long porque es el tipo de dato que usa la clave principal de su tabla
 public interface UserRepository extends CrudRepository<UserModel, Long>{

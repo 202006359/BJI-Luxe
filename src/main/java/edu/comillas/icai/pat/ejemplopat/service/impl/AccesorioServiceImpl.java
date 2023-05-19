@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.comillas.icai.pat.ejemplopat.model.AccesorioModel;
+import edu.comillas.icai.pat.ejemplopat.dao.AccesorioModel;
 import edu.comillas.icai.pat.ejemplopat.repository.AccesorioRepository;
 import edu.comillas.icai.pat.ejemplopat.service.AccesorioService;
 

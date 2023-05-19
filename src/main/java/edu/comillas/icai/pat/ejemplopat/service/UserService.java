@@ -3,8 +3,8 @@ package edu.comillas.icai.pat.ejemplopat.service;
 
 import java.util.ArrayList;
 
+import edu.comillas.icai.pat.ejemplopat.dao.UserModel;
 import edu.comillas.icai.pat.ejemplopat.dto.UserDTO;
-import edu.comillas.icai.pat.ejemplopat.model.UserModel;
 
 public interface UserService{
     Iterable<UserModel> retrieveAll();

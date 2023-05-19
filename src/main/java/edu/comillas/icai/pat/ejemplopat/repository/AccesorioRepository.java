@@ -7,7 +7,7 @@ import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import edu.comillas.icai.pat.ejemplopat.model.AccesorioModel;
+import edu.comillas.icai.pat.ejemplopat.dao.AccesorioModel;
 
 public interface AccesorioRepository extends CrudRepository<AccesorioModel,Long>
 {
