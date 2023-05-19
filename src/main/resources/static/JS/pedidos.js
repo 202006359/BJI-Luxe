@@ -63,15 +63,43 @@ function obtenerPedidos(event) {
     if(!(document.getElementById('username').value.trim() === '') && !(document.getElementById('password').value.trim() === '')){
 
 
-        fetch("/api/add/pedido", {method:"PUT", body: body_html})
+        fetch("/pedido", {method:"POST", body: body_html})
         .then(function(res){
             return res.text();
         })
         .then(function(data)
         {
-            alert(data);
+            var totalSum=0;
+            var table=document.getElementById("table_prod");
+            orden_items=JSON.parse(data);
+
+            console.log(orden_items)
+            for(let i=0;i<orden_items.length; i++)
+            {
+              console.log(orden_items[i]["precio"]);
+
+              var row= document.createElement("tr");
+              var producto=document.createElement("td")
+              producto.innerHTML=orden_items[i]["nombre"];
+
+              var cantidad=document.createElement("td");
+              cantidad.innerHTML=orden_items[i]["cantidad"];
+
+              var precio=document.createElement("td")
+              precio.innerHTML=orden_items[i]["precio"] + "€";
+              totalSum += orden_items[i]["precio"];
+
+              row.appendChild(producto);
+              row.appendChild(cantidad);
+              row.appendChild(precio);
+
+
+              table.appendChild(row);
+
+            }
+
             var h4= document.createElement("h4");
-            h4.innerHTML=data;
+            h4.innerHTML="Coste total: "+ totalSum + " €";
             div.appendChild(h4);
         })
         .catch(function(error)

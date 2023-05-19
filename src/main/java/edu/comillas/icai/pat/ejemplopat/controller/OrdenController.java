@@ -125,7 +125,7 @@ public class OrdenController {
  
 
 
-    @GetMapping("pedido")
+    @PostMapping("pedido")
     public ResponseEntity<ArrayList<Orden>> getPedido(@RequestBody String body) //el body es solo el usuario, el carrito lo pido por aqui
     {
         RestTemplate restTemplate = new RestTemplate();
