@@ -1,5 +1,7 @@
 package edu.comillas.icai.pat.ejemplopat.service.impl;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +34,14 @@ public class OrdenServiceImpl implements OrdenService {
         pedidosRepository.deleteAll();
 
     }
+
+    @Override
+    public ArrayList<Orden> getByUserId(long id) {
+        return pedidosRepository.getByUserId(id);
+    }
+
+
+    
 
     
 }
