@@ -1,5 +1,8 @@
-var check = function() {
-    if (document.getElementById('password').value ==
+var check = function() {  
+  if (document.getElementById('username').value.trim() === ''){
+    document.getElementById("btn_check_user").disabled = false;
+  } 
+  if (document.getElementById('password').value ==
       document.getElementById('password_repeat').value) {
       document.getElementById('message').style.color = 'green';
       document.getElementById('message').innerHTML = 'Las contrasenas son iguales';
@@ -61,6 +64,8 @@ btn_buscar_user.addEventListener("click", updateUser);
 
 
 function updateUser(event) {
+
+  if(!(document.getElementById('username').value.trim() === '') && !(document.getElementById('password').value.trim() === '')){
     event.preventDefault(); // Evita que se recargue la página
     
     var username= document.getElementById("username").value;
@@ -91,5 +96,11 @@ function updateUser(event) {
         h4.innerHTML=error;
         div.appendChild(h4);
     });
+  }else{
+    var h4= document.createElement("h4");
+    h4.innerHTML='Rellene todos los campos';
+    div.appendChild(h4);
+
+  }
 
 }

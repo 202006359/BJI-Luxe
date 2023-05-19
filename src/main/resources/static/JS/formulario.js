@@ -13,6 +13,15 @@ var check = function() {
     }
   }
 
+  document.getElementById("reset").addEventListener("click", function() {
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("password_repeat").value = "";
+    document.getElementById("localidad").value = "";
+    document.getElementById("message").innerHTML = "";
+    document.getElementById("alert_empty_name").classList.add("d-none");
+  });
+  
 
 
   var usernameInput = document.getElementById('username');
@@ -22,6 +31,40 @@ var check = function() {
         event.preventDefault();
       }
   });
+
+  function checkForm() {
+    var usernameInput = document.getElementById("username");
+    var passwordInput = document.getElementById("password");
+    var passwordRepeatInput = document.getElementById("password_repeat");
+    var alertEmptyName = document.getElementById("alert_empty_name");
+  
+    if (usernameInput.value.trim() === "") {
+      alertEmptyName.classList.remove("d-none");
+      return false; // Prevent form submission
+    }
+  
+    else if (passwordInput.value.trim() === "") {
+      alert_empty_name.classList.remove("d-none");
+      return false; // Prevent form submission
+    }
+  
+    else if (passwordInput.value !== passwordRepeatInput.value) {
+      document.getElementById('message').style.color = 'red';
+      document.getElementById('message').innerHTML = 'Passwords do not match';
+      document.getElementById("btn_submit").disabled = true;
+      return false; // Prevent form submission
+    }
+  
+    return true; // Allow form submission
+  }
+  
+  
+
+  function closeAlert() {
+    var alertEmptyName = document.getElementById("alert_empty_name");
+    alertEmptyName.classList.add("d-none");
+  }
+
 
 
   var locationInput = document.getElementById('localidad');

@@ -7,65 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hombres</title>
 	<link rel="stylesheet" href="./CSS/style_common.css">
-    <link rel="stylesheet" href="./CSS/AccesoriosCSS.css">
+    <link rel="stylesheet" href="./CSS/hombres.css">
 
 
 </head>
 <body>
 	<header>
-		<h1>OUTLET ~ TIENDA DE STOCK LIMITADO</h1>
 		<nav>
-			<ul class="menu">
-				<li><a href="./index.html">Inicio</a></li>
-
-				<li>
-					<a style="cursor:pointer" onclick="Alternar()
-						function Alternar(){ 
-							let ul= document.getElementById('store_options');
-							if (ul.style.display=='none'){ul.style.display='';}
-							else{ul.style.display='none';} 
-						}" 
-					>Tienda</a>
+			<nav>
+				<ul class="menu">
+					<li><a href="./index.html">BJI Luxe</a></li>
+			
+					<li>
+						<a style="cursor:pointer" onclick="Alternar('store_options')">Tienda</a>
 						<ul style="display:none" id="store_options" class="menu">
-							<li>                 <a href="./mujeres.html">Mujeres</a></li>
-							<li>                 <a href="./hombres.html">Hombres</a></li>
-							<li>                 <a href="./accesorios.html">Accesorios</a></li>
+							<li><a href="./mujeres.html">Moda Mujer</a></li>
+							<li><a href="./hombres.html">Moda Hombre</a></li>
+							<li><a href="./accesorios.html">Accesorios</a></li>
 						</ul>
-				</li>
-
-				<li>
-					<a style="cursor:pointer" onclick="Alternar()
-						function Alternar(){ 
-							let ul= document.getElementById('user_options');
-							if (ul.style.display=='none'){ul.style.display='';}
-							else{ul.style.display='none';} 
-						}" 
-					>Users</a>
+					</li>
+			
+					<li>
+						<a style="cursor:pointer" onclick="Alternar('user_options')">Users</a>
 						<ul style="display:none" id="user_options" class="menu">
-							<li>    <a href="./FormularioSignUp.html">Crear usuario</a>		</li>
-							<li>    <a href="./UserSearcher.html">Buscar usuarios</a>  		</li>
-							<li>    <a href="./Update_user.html">Actualizar tu usuario</a>	</li>
-							<li>	<a href="./Delete_user.html">Borrar tu usuario</a> 		</li>
+							<li><a href="./FormularioSignUp.html">Crear usuario</a></li>
+							<li><a href="./UserSearcher.html">Buscar usuarios</a></li>
+							<li><a href="./Update_user.html">Actualizar tu usuario</a></li>
+							<li><a href="./Delete_user.html">Borrar tu usuario</a></li>
 						</ul>
-	
-				</li>
-				<li><a href="./carrito.html">Carrito</a></li>
-				<li><a href="">Pedidos</a></li>
-			</ul>
-		</nav>
+					</li>
+					<li><a href="./carrito.html">Carrito</a></li>
+					<li><a href="">Pedidos</a></li>
+				</ul>
+			</nav>
+			
 	</header>
 
 	<main>
 		<section>
-			<h2>Ropa para hombres</h2>
+			<h1>Moda Hombre</h1>
 			<div id="div_productos" class="gridLayout"> </div>
 		</section>
 
 	</main>
 	<footer>
-		<p>Derechos reservados © 2023 Tienda de ropa</p>
+		<p>Derechos reservados © 2023 BJI Luxe</p>
 	</footer>
 	<script src="./JS/hombres.js"></script>
+	<script src="./JS/navegacion.js"></script>
 </body>
 </html>
 

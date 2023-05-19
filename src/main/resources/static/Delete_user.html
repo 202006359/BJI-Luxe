@@ -2,51 +2,38 @@
 
 <head>
     <title>Borrar Usuarios</title>
+	<meta charset="UTF-8">
     <link rel="icon" href="./Images/lupaicono.png">
-    <link rel="stylesheet" href="./CSS/CSSstyle.css">
     <link rel="stylesheet" href="./CSS/style_common.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
 
 </head>
 
 <body>
-    <img src="./Images/Fondo.jpg" id="foto_inicio" width=100% height=100%> </img>
 
 	<header>
-		<h1>OUTLET ~ TIENDA DE STOCK LIMITADO</h1>
 		<nav>
 			<ul class="menu">
 				<li><a href="./index.html">Inicio</a></li>
-
+		
 				<li>
-					<a style="cursor:pointer" onclick="Alternar()
-						function Alternar(){ 
-							let ul= document.getElementById('store_options');
-							if (ul.style.display=='none'){ul.style.display='';}
-							else{ul.style.display='none';} 
-						}" 
-					>Tienda</a>
-						<ul style="display:none" id="store_options" class="menu">
-							<li>                 <a href="./mujeres.html">Mujeres</a></li>
-							<li>                 <a href="./hombres.html">Hombres</a></li>
-							<li>                 <a href="./accesorios.html">Accesorios</a></li>
-						</ul>
+					<a style="cursor:pointer" onclick="Alternar('store_options')">BJI Luxe</a>
+					<ul style="display:none" id="store_options" class="menu">
+						<li><a href="./mujeres.html">Moda Mujer</a></li>
+						<li><a href="./hombres.html">Moda Hombre</a></li>
+						<li><a href="./accesorios.html">Accesorios</a></li>
+					</ul>
 				</li>
-
+		
 				<li>
-					<a style="cursor:pointer" onclick="Alternar()
-						function Alternar(){ 
-							let ul= document.getElementById('user_options');
-							if (ul.style.display=='none'){ul.style.display='';}
-							else{ul.style.display='none';} 
-						}" 
-					>Users</a>
-						<ul style="display:none" id="user_options" class="menu">
-							<li>    <a href="./FormularioSignUp.html">Crear usuario</a>		</li>
-							<li>    <a href="./UserSearcher.html">Buscar usuarios</a>  		</li>
-							<li>    <a href="./Update_user.html">Actualizar tu usuario</a>	</li>
-							<li>	<a href="./Delete_user.html">Borrar tu usuario</a> 		</li>
-						</ul>
-	
+					<a style="cursor:pointer" onclick="Alternar('user_options')">Users</a>
+					<ul style="display:none" id="user_options" class="menu">
+						<li><a href="./FormularioSignUp.html">Crear usuario</a></li>
+						<li><a href="./UserSearcher.html">Buscar usuarios</a></li>
+						<li><a href="./Update_user.html">Actualizar tu usuario</a></li>
+						<li><a href="./Delete_user.html">Borrar tu usuario</a></li>
+					</ul>
 				</li>
 				<li><a href="./carrito.html">Carrito</a></li>
 				<li><a href="">Pedidos</a></li>
@@ -57,47 +44,40 @@
     <br>
     <br>
 
-    <h1>Borra tu usuario</h1>
-    <p>Introduce tu usuario y contraseña para borrar tu usuario. Recuerda que esto es irreversible.</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th class="dato_sin_bordes"> </th>
-                <th class="dato_sin_bordes"> </th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-				<td class="dato_sin_bordes"> <label id="username_label">Nombre de usuario</label></td>
-			    <td class="dato_sin_bordes"><input id="username" type="text" placeholder="Username" required="required"></td>
-			</tr>
-
-            <tr>
-				<td class="dato_sin_bordes"><label>Introduce la contraseña</label></td>
-			    <td class="dato_sin_bordes"><input id="password" onkeyup='check();'  type="password" placeholder="Password" required="required"></td>
-			</tr>
-
-            <tr>
-				<td class="dato_sin_bordes"><label id="password_label_r" for="password">Introduce la contraseña</label></td>
-			    <td class="dato_sin_bordes"><input id="password_repeat" onkeyup='check();' type="password" placeholder="Repeat Password" required="required"></td>
-			</tr>
-
-            <tr>
-				<td class="dato_sin_bordes"><p></p></td>
-			    <td class="dato_sin_bordes"><button id="btn_detele_user">Eliminar Usuario</button></td>
-			</tr>
-        </tbody>
-
-    </table>
-
-
-    <br>
-    <p id="message"></p>
-    <br>
-
-    <div id="div_ans"></div>
+    <div class="container mt-5">
+		<h1>Borra tu usuario</h1>
+		<p>Introduce tu usuario y contraseña para borrar tu usuario. Recuerda que esto es irreversible.</p>
+	  
+		<form id="deleteForm">
+		  <table class="table">
+			<tbody>
+			  <tr>
+				<td><label for="username">Nombre de usuario</label></td>
+				<td><input id="username" class="form-control" type="text" placeholder="Username" required autocomplete="off"></td>
+			  </tr>
+			  <tr>
+				<td><label for="password">Introduce la contraseña</label></td>
+				<td><input id="password" class="form-control" onkeyup=check() type="password" placeholder="Password" required autocomplete="off"></td>
+			  </tr>
+			  <tr>
+				<td><label for="password_repeat">Repite la contraseña</label></td>
+				<td><input id="password_repeat" class="form-control" type="password" onkeyup=check() placeholder="Repeat Password" required autocomplete="off"></td>
+			  </tr>
+			  <tr>
+				<td></td>
+				<td><button id="btn_delete_user" class="btn btn-danger">Eliminar Usuario</button></td>
+			  </tr>
+			</tbody>
+		  </table>
+		</form>
+	  
+		<br>
+		<p id="message"></p>
+		<br>
+	  
+		<div id="div_ans"></div>
+	  </div>
+	  
 
     <br>
     <br>
@@ -107,13 +87,11 @@
     <br>
     
 	<footer>
-		<ul class="menu">
-			<li><a href="https://www.linkedin.com/in/javier-del-aguila-martos/" id="linkedin_logo"> <img src="./Images/linkedin_logo.png" width=7% height=auto></img> </a> </li>
-			<li><a href="https://instagram.com/" id="insta_logo"> <img src="./Images/instagram_logo.png" width=7% height=auto></img> </a> </li>
-		</ul>
+		<p>Derechos reservados © 2023 BJI Luxe</p>
 	</footer>
 
 
 </body>
     <script type="text/javascript" src="JS/DeleteUser.js"></script>
+	<script type="text/javascript" src="JS/navegacion.js"></script>
 </html>

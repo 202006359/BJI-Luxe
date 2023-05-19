@@ -1,143 +1,75 @@
-/* Estilos generales */
-
-body {
-    background-image: url('https://media.istockphoto.com/id/1097185952/es/foto/fondo-de-textura-de-piso-de-madera-blanca.jpg?s=170667a&w=0&k=20&c=tLoiE2SUPIy4FAvvq9eKWZiDbuh1amDTQbS16XK7cTU=');
-    /*font-family: Arial, sans-serif;*/
-    font-size: 16px;
-    line-height: 1.5;
-    margin:100;
-}
-
-h1, h2, h3 {
-    margin-top: 0;
+h1{
     text-align: center;
 }
 
-ul {
-    list-style: none;
-    margin: 10;
-    padding: 0;
+div.gridLayout{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas con el mismo ancho */
+    /* grid-auto-rows: 100px;  altura fija de cada fila */
 }
 
-button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 10px 20px;
+div.produtLayout{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas con el mismo ancho */
+    grid-template-rows: 5fr 1fr 1fr; /* Tres filas con alturas proporcionales */
+    /*la primera fila tendrá una altura del 75% del espacio disponible, y las otras dos filas se repartirán el 25% restante. 3fr significa que la primera fila ocupará tres partes de las seis partes disponibles (es decir, el 50% + el 25% = 75%), y 1fr significa que las otras dos filas ocuparán una parte de las seis partes disponibles cada una (es decir, el 25% para cada una).*/
+      grid-template-areas:
+      "photo   photo"
+      "title price "
+      "button   button";
+    gap: 7px;
+    padding: 10%;
+    /*text-align: center;*/
+    padding-bottom: 15%;
+
 }
 
-button:hover {
-    background-color: #3E8E41;
+.photo{
+    grid-area: photo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Asi SI crece en tamaño al tener disponible*/
 }
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-/* Estilos para el encabezado */
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
+.title{
     text-align: center;
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0; /* Asi no crece en tamaño aunque tenga disponible*/
 }
 
-nav ul li {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-nav ul li:first-child {
-    margin-left: 0;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos para el contenido principal */
-
-main section {
-    margin-bottom: 40px;
-}
-
-main section ul li {
-    display: inline-block;
-    margin-right: 20px;
-    vertical-align: top;
-}
-
-main section ul li:last-child {
-    margin-right: 0;
-}
-
-main section ul li img {
-    display: block;
-    max-width: 100%;
-}
-
-main section ul li h3 {
-    margin-top: 10px;
-    font-size: 18px;
-}
-
-main section ul li p {
-    margin-top: 5px;
-    font-size: 16px;
-}
-
-
-
-
-
-
-
-
-
-
-/* Estilos para el pie de página */
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+.price{
     text-align: center;
+    grid-area: price;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Asi no crece en tamaño aunque tenga disponible*/
 }
 
-.prenda-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+
+.button{
+    grid-area: button;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Centrar horizontalmente */
+    padding: 5%;
 }
 
-.prenda {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 10px;
-  background-color: #f1f1f1;
-  border: 1px solid #ddd;
-}
 
-.prenda img {
-  max-width: 100%;
-  max-height: 200px;
-  object-fit: contain;
-}
 
-.prenda h3 {
-  margin-top: 10px;
-  font-size: 1.2em;
-  font-weight: bold;
-}
 

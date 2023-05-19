@@ -2,51 +2,38 @@
 
 <head>
     <title>Buscar Usuarios</title>
+	<meta charset="UTF-8">
     <link rel="icon" href="./Images/lupaicono.png">
-    <link rel="stylesheet" href="./CSS/CSSstyle.css">
     <link rel="stylesheet" href="./CSS/style_common.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
 
 </head>
 
 <body>
-    <img src="./Images/Fondo.jpg" id="foto_inicio" width=100% height=100%> </img>
 
 	<header>
-		<h1>OUTLET ~ TIENDA DE STOCK LIMITADO</h1>
 		<nav>
 			<ul class="menu">
-				<li><a href="./index.html">Inicio</a></li>
-
+				<li><a href="./index.html">BJI Luxe</a></li>
+		
 				<li>
-					<a style="cursor:pointer" onclick="Alternar()
-						function Alternar(){ 
-							let ul= document.getElementById('store_options');
-							if (ul.style.display=='none'){ul.style.display='';}
-							else{ul.style.display='none';} 
-						}" 
-					>Tienda</a>
-						<ul style="display:none" id="store_options" class="menu">
-							<li>                 <a href="./mujeres.html">Mujeres</a></li>
-							<li>                 <a href="./hombres.html">Hombres</a></li>
-							<li>                 <a href="./accesorios.html">Accesorios</a></li>
-						</ul>
+					<a style="cursor:pointer" onclick="Alternar('store_options')">Tienda</a>
+					<ul style="display:none" id="store_options" class="menu">
+						<li><a href="./mujeres.html">Moda Mujer</a></li>
+						<li><a href="./hombres.html">Moda Hombre</a></li>
+						<li><a href="./accesorios.html">Accesorios</a></li>
+					</ul>
 				</li>
-
+		
 				<li>
-					<a style="cursor:pointer" onclick="Alternar()
-						function Alternar(){ 
-							let ul= document.getElementById('user_options');
-							if (ul.style.display=='none'){ul.style.display='';}
-							else{ul.style.display='none';} 
-						}" 
-					>Users</a>
-						<ul style="display:none" id="user_options" class="menu">
-							<li>    <a href="./FormularioSignUp.html">Crear usuario</a>		</li>
-							<li>    <a href="./UserSearcher.html">Buscar usuarios</a>  		</li>
-							<li>    <a href="./Update_user.html">Actualizar tu usuario</a>	</li>
-							<li>	<a href="./Delete_user.html">Borrar tu usuario</a> 		</li>
-						</ul>
-	
+					<a style="cursor:pointer" onclick="Alternar('user_options')">Users</a>
+					<ul style="display:none" id="user_options" class="menu">
+						<li><a href="./FormularioSignUp.html">Crear usuario</a></li>
+						<li><a href="./UserSearcher.html">Buscar usuarios</a></li>
+						<li><a href="./Update_user.html">Actualizar tu usuario</a></li>
+						<li><a href="./Delete_user.html">Borrar tu usuario</a></li>
+					</ul>
 				</li>
 				<li><a href="./carrito.html">Carrito</a></li>
 				<li><a href="">Pedidos</a></li>
@@ -55,36 +42,49 @@
 	</header>
 
 
-    <br>
-    <br>
-
-    <h1>Busca usuarios</h1>
-
-    <label id="username_label" for="username">Introduce el nombre de usuario</label>
-    <input id="username" type="text" placeholder="Username" required="required" value="user">
-
-    <button id="btn_buscar_user">Buscar</button>
-
-
-    <div id="div_ans"></div>
-
-
 
     <br>
     <br>
+
+	<div class="container mt-5">
+		<h1>Busca usuarios</h1>
+	  
+		<div class="form-group">
+		  <label for="username">Introduce el nombre de usuario</label>
+		  <input id="username" class="form-control" type="text" placeholder="Username" required value="user">
+		</div>
+		<br>
+		<br>
+		<button id="btn_buscar_user" class="btn btn-primary">Buscar</button>
+		<br><br>
+		<div id="div_ans" class="mt-3"></div>
+	  </div>
+
+
+
     <br>
     <br>
     <br>
     <br>
+    <br>
+    <br>
+	<br>
+    <br>
+    <br>
+    <br>
+	<br>
+    <br>
+    <br>
+    <br>
+	<br>
+
     
 	<footer>
-		<ul class="menu">
-			<li><a href="https://www.linkedin.com/in/javier-del-aguila-martos/" id="linkedin_logo"> <img src="./Images/linkedin_logo.png" width=7% height=auto></img> </a> </li>
-			<li><a href="https://instagram.com/" id="insta_logo"> <img src="./Images/instagram_logo.png" width=7% height=auto></img> </a> </li>
-		</ul>
+		<p>Derechos reservados © 2023 BJI Luxe</p>
 	</footer>
 
 
 </body>
     <script type="text/javascript" src="JS/SearchUsers.js"></script>
+	<script type="text/javascript" src="JS/navegacion.js"></script>
 </html>

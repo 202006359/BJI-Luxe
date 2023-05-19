@@ -54,8 +54,12 @@ public class OrdenController {
         String usuariosUrl = "http://localhost:8080/verify_user";
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<String>(body, headers);
-        ResponseEntity<Boolean> response = restTemplate.exchange(usuariosUrl, HttpMethod.PUT, entity, Boolean.class);
-
+        ResponseEntity<Boolean> response;
+        try{
+            response = restTemplate.exchange(usuariosUrl, HttpMethod.PUT, entity, Boolean.class);
+        }catch(Exception e){
+            return new ResponseEntity<String>("Las credenciales no son correctas",HttpStatus.BAD_REQUEST);
+        }
         boolean usuarioCorrecto = response.getBody();
         if(usuarioCorrecto)
         {

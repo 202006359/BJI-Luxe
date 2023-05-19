@@ -12,7 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class UrlToBlob {
+public class UrlToHex {
     public static void main(String[] args) {
         String imageUrl = "https://galagarcianovias.com/wp-content/uploads/2020/10/vestidodefiesta2020_4U133_AIRE_BARCELONA_FIESTA_2.jpg";
 

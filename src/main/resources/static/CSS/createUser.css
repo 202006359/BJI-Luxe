@@ -1,0 +1,176 @@
+/* Reset default margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set a background image */
+  body {
+    background-image: url('https://media.istockphoto.com/id/1097185952/es/foto/fondo-de-textura-de-piso-de-madera-blanca.jpg?s=170667a&w=0&k=20&c=tLoiE2SUPIy4FAvvq9eKWZiDbuh1amDTQbS16XK7cTU=');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  /* Style the navigation menu */
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+    transition-duration: 0.5s;
+    color: rgba(147, 254, 123, 0.918);
+  }
+  
+  /* Style the footer */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Style the buttons */
+  button {
+    background-color: #42a246fd;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+  
+  button:hover {
+    background-color: #367238;
+    transition-duration: 0.75s;
+  }
+  
+  /* Style the menu */
+  .menu {
+    display: flex;
+    background: #333;
+    padding: 0.1em;
+    justify-content: center;
+  }
+  
+  .menu li {
+    flex: auto;
+    color: white;
+  }
+  
+  .menu li:hover {
+    background: rgb(46, 90, 44);
+  }
+  
+  .menu a {
+    text-align: center;
+    display: block;
+    padding: 5%;
+    color: white;
+    user-select: none;
+  }
+  
+  /* Additional styles and modifications can be added here */
+  
+  .caja_traslucida {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .grid3x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .label1,
+  .label2 {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .input1,
+  .input2 {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .alert {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .alert .popup_close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .alert .popup_close:hover {
+    color: #ccc;
+  }
+  
+  .popup_close:before {
+    content: "×";
+  }
+  
+  .popup_close:hover:before {
+    content: "×";
+  }
+  
+  .alert p {
+    margin: 0;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  a {
+    color: #42a246fd;
+  }
+  
+  a:hover {
+    color: #367238;
+    text-decoration: underline;
+  }
+  

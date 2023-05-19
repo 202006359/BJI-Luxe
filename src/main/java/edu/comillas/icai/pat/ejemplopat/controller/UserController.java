@@ -378,7 +378,7 @@ public class UserController{
     
     @GetMapping("get_user_id/{username}")
     public ResponseEntity<Long> getUserIdByUserName(@PathVariable String username){
-         return ResponseEntity.status(HttpStatus.OK).body(userService.getUserByUsername(username).getUserId());
+        return ResponseEntity.status(HttpStatus.OK).body(userService.getUserByUsername(username).getUserId());
     }
 
     

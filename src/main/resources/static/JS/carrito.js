@@ -16,6 +16,7 @@ function cargarProductos()
         //let n_grids= Math.ceil(carrito_items.length/3);
         datos_stock.push(carrito_items);
     
+        var totalSum = 0;
 
         for(let i=0;i<carrito_items.length; i++)
         {
@@ -24,9 +25,10 @@ function cargarProductos()
 
             var producto=document.createElement("td")
             producto.innerHTML=carrito_items[i]["nombre"];
+            totalSum += carrito_items[i]["precio"]
 
             var precio=document.createElement("td")
-            precio.innerHTML=carrito_items[i]["precio"];
+            precio.innerHTML=carrito_items[i]["precio"] + "€";
 
             //var cantidad=document.createElement("td");
             //cantidad.innerHTML=1;
@@ -38,6 +40,22 @@ function cargarProductos()
 
             table.appendChild(row);
         }
+
+        // Create a row for the total sum
+        var totalRow = document.createElement("tr");
+
+        var totalLabel = document.createElement("th");
+        totalLabel.innerHTML = "TOTAL";
+
+        var totalPrice = document.createElement("th");
+        totalPrice.innerHTML = totalSum.toFixed(2) + "€"; // Format the total sum to 2 decimal places
+
+        totalRow.appendChild(totalLabel);
+        totalRow.appendChild(totalPrice);
+
+        table.appendChild(totalRow);
+
+
 
     })
     .catch(function(error)
@@ -78,32 +96,31 @@ var check = function() {
     }
   }
 
-var usernameInput = document.getElementById('username');
-usernameInput.addEventListener('keypress', function(event) {
-  var regex = /^[a-zA-Z0-9]+$/;
-  if (!regex.test(event.key)) {
-      event.preventDefault();
-    }
-});
-
-
-var passwordInput = document.getElementById('password');
-passwordInput.addEventListener('keypress', function(event) {
-  var regex = /^[a-zA-Z0-9]+$/;
-  if (!regex.test(event.key)) {
-      event.preventDefault();
-    }
-});
-
-var password_repeatInput = document.getElementById('password_repeat');
-password_repeatInput.addEventListener('keypress', function(event) {
-  var regex = /^[a-zA-Z0-9]+$/;
-  if (!regex.test(event.key)) {
-      event.preventDefault();
-    }
-});
-
-
+  var usernameInput = document.getElementById('username');
+  usernameInput.addEventListener('keypress', function(event) {
+    var regex = /^[a-zA-Z0-9]+$/;
+    if (!regex.test(event.key)) {
+        event.preventDefault();
+      }
+  });
+  
+  var usernameInput = document.getElementById('password');
+  usernameInput.addEventListener('keypress', function(event) {
+    var regex = /^[a-zA-Z0-9]+$/;
+    if (!regex.test(event.key)) {
+        event.preventDefault();
+      }
+  });
+  
+  var usernameInput = document.getElementById('password_repeat');
+  usernameInput.addEventListener('keypress', function(event) {
+    var regex = /^[a-zA-Z0-9]+$/;
+    if (!regex.test(event.key)) {
+        event.preventDefault();
+      }
+  });
+  
+  
 
 
 
@@ -128,23 +145,30 @@ function updateUser(event) {
     var div = document.getElementById("div_ans");
     div.innerHTML = ""; //quitamos lo que hubiera antes, como la ultima busqueda
 
-    fetch("/api/add/pedido", {method:"PUT", body: body_html})
-    .then(function(res){
-        return res.text();
-    })
-    .then(function(data)
-    {
-        var h4= document.createElement("h4");
-        h4.innerHTML=data;
-        div.appendChild(h4);
-    })
-    .catch(function(error)
-    {
-        var h4= document.createElement("h4");
-        h4.innerHTML=error;
-        div.appendChild(h4);
-    });
+    if(!(document.getElementById('username').value.trim() === '') && !(document.getElementById('password').value.trim() === '')){
 
+
+        fetch("/api/add/pedido", {method:"PUT", body: body_html})
+        .then(function(res){
+            return res.text();
+        })
+        .then(function(data)
+        {
+            var h4= document.createElement("h4");
+            h4.innerHTML=data;
+            div.appendChild(h4);
+        })
+        .catch(function(error)
+        {
+            var h4= document.createElement("h4");
+            h4.innerHTML=error;
+            div.appendChild(h4);
+        });
+    }else{
+        var h4= document.createElement("h4");
+        h4.innerHTML="Rellene todos los campos";
+        div.appendChild(h4);
+    }
 }
 
 

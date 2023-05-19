@@ -1,61 +1,34 @@
-body {
-	background-image: url('https://media.istockphoto.com/id/1097185952/es/foto/fondo-de-textura-de-piso-de-madera-blanca.jpg?s=170667a&w=0&k=20&c=tLoiE2SUPIy4FAvvq9eKWZiDbuh1amDTQbS16XK7cTU=');
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-
-header {
-	background-color: #333;
-	color: #fff;
-	text-align: center;
-	padding: 20px;
-}
-
-nav ul {
-	list-style: none;
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-}
-
-nav li {
-	display: inline-block;
-	margin-right: 20px;
-}
-
-nav li:last-child {
-	margin-right: 0;
-}
-
-nav a {
-	color:royalblue;
-}
-
-    a {
-        text-decoration: none;
-        color: #333;
-    }
+.ivan{ 
+    float: left;
+    font-family: 'Times New Roman', 'Times Light', light;
+    font-size: large;
+    background-color: #b9b7b1;
+    color: white;
+    text-align: justify;
     
-    a:hover {
-        text-decoration: underline;
-    }
-    
-    main {
-        background-image: url('https://images.unsplash.com/photo-1619059356058-92bab5b09858?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHw%3D&w=1000&q=80');
-        height: 50em;
-        max-width: 800px;
-        margin-top: 40px;
-        margin-left: 250px;
-        padding: 20px;
-    }
+  }
 
-    footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
-        margin-top: 40px;
-        clear: both;
-    }
+  #left{
+    vertical-align: center;
+    margin: 2em;
+    float: left;
+    width: 40%;
+    padding: 4%;
     
+  }
+
+  #right {
+    margin: 3em;
+    float: left;
+    width: 33%;
+    text-align: center; /* Center the image horizontally */
+  }
+
+ .title{
+  font-size: 64px;
+ }
+
+ .description{
+  font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+  font-size: 30px;
+ }
