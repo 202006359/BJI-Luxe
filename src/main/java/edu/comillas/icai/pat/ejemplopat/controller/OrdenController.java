@@ -1,5 +1,6 @@
 package edu.comillas.icai.pat.ejemplopat.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -12,6 +13,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -120,5 +122,49 @@ public class OrdenController {
         }
     }
  
-    
+
+
+    @GetMapping("pedido")
+    public ResponseEntity<ArrayList<Orden>> getPedido(@RequestBody String body) //el body es solo el usuario, el carrito lo pido por aqui
+    {
+        RestTemplate restTemplate = new RestTemplate();
+        String usuariosUrl = "http://localhost:8080/verify_user";
+        HttpHeaders headers = new HttpHeaders();
+        HttpEntity<String> entity = new HttpEntity<String>(body, headers);
+        ResponseEntity<Boolean> response;
+        try{
+            response = restTemplate.exchange(usuariosUrl, HttpMethod.PUT, entity, Boolean.class);
+        }catch(Exception e){
+            return new ResponseEntity<ArrayList<Orden>>(HttpStatus.BAD_REQUEST);
+        }
+        boolean usuarioCorrecto = response.getBody();
+        if(usuarioCorrecto)
+        {
+            String pattern = "username=([^&]+)";
+
+            Pattern regex = Pattern.compile(pattern);
+            Matcher matcher = regex.matcher(body);
+
+            String username = null;
+            if (matcher.find()) {
+                username = matcher.group(1);
+            }else{
+                return new ResponseEntity<ArrayList<Orden>>(HttpStatus.BAD_REQUEST);
+            }
+            
+            String usuarioUrl = "http://localhost:8080/get_user_id/" + username;
+            HttpEntity<String> entity_empty = new HttpEntity<String>(headers);
+            ResponseEntity<Long> responseUser = restTemplate.exchange(usuarioUrl, HttpMethod.GET, entity_empty, Long.class);
+
+            Long id_user = responseUser.getBody();
+
+            ArrayList<Orden> orden_all= pedidosService.getByUserId(id_user);
+
+            return new ResponseEntity<ArrayList<Orden>>(orden_all,HttpStatus.OK);
+        }
+        else{
+            return new ResponseEntity<ArrayList<Orden>>(HttpStatus.BAD_REQUEST);
+        }
+    }
+     
 }

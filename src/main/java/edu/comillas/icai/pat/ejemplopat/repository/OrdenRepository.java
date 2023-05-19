@@ -1,5 +1,7 @@
 package edu.comillas.icai.pat.ejemplopat.repository;
 
+import java.util.ArrayList;
+
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -17,6 +19,11 @@ public interface OrdenRepository extends CrudRepository<Orden,Long>{
         @Param("id_prod") Long id_prod,
         @Param("nombre") String nombre,
         @Param("cantidad") Integer cantidad);
+
+
+    @Query
+    ("SELECT * FROM PEDIDOS WHERE ID_USER= :user_buscado")
+    ArrayList<Orden> getByUserId(@Param("user_buscado") Long user_buscado);
 
 
 }
