@@ -70,14 +70,32 @@ function obtenerPedidos(event) {
         .then(function(data)
         {
             var totalSum=0;
-            var table=document.getElementById("table_prod");
+            var table_all=document.getElementById("table_prod");
             orden_items=JSON.parse(data);
 
-            console.log(orden_items)
+           var table_head=document.createElement("thead");
+
+            var row= document.createElement("tr");
+            var producto=document.createElement("th")
+            producto.innerHTML="Producto";
+            var cantidad=document.createElement("th");
+            cantidad.innerHTML="Cantidad";
+            var precio=document.createElement("th")
+            precio.innerHTML="Coste del pedido"
+
+
+            row.appendChild(producto);
+            row.appendChild(cantidad);
+            row.appendChild(precio);
+
+
+            table_head.appendChild(row);
+
+
+            var table_body=document.createElement("tbody");
+
             for(let i=0;i<orden_items.length; i++)
             {
-              console.log(orden_items[i]["precio"]);
-
               var row= document.createElement("tr");
               var producto=document.createElement("td")
               producto.innerHTML=orden_items[i]["nombre"];
@@ -93,10 +111,11 @@ function obtenerPedidos(event) {
               row.appendChild(cantidad);
               row.appendChild(precio);
 
-
-              table.appendChild(row);
-
+              table_body.appendChild(row);
             }
+
+            table_all.appendChild(table_head);
+            table_all.appendChild(table_body);
 
             var h4= document.createElement("h4");
             h4.innerHTML="Coste total: "+ totalSum + " €";
