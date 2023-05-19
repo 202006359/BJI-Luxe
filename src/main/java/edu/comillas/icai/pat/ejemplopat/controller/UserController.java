@@ -19,13 +19,13 @@ import edu.comillas.icai.pat.ejemplopat.dao.UserModel;
 import edu.comillas.icai.pat.ejemplopat.dto.UserDTO;
 import edu.comillas.icai.pat.ejemplopat.service.impl.UserServiceImpl;
 import edu.comillas.icai.pat.ejemplopat.util.PasswordEncrypter;
+import lombok.extern.slf4j.Slf4j;
 
 
 
 
 @Controller //indica a Spring que esta clase recibe peticiones http
-//@RestController
-//@RequestMapping("/api/v1") //antes de mi URL debe estar lo que indique entre ()
+@Slf4j
 public class UserController{
     private final static String DIV_HTML="&";
     private final static String username_key="username";
@@ -46,6 +46,7 @@ public class UserController{
     {
         if (!isAlphanumeric(username)) 
         {
+            log.error("Error: El usarname no es alfanumerico");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
         else //efectivamente es alfanumerico, se lo paso al siguiente
@@ -56,6 +57,7 @@ public class UserController{
             {
                 lista_resp.add(s.toString());
             }
+            log.info("Accediendo a getUserListByUserName");
             return ResponseEntity.status(HttpStatus.OK).body(lista_resp);
         }
 
@@ -86,16 +88,19 @@ public class UserController{
         if (!isAlphanumeric(username))
         {
             message = "\nError, el nombre de usuario no puede contener caracteres especiales, solo puede estar formado por letras y numeros.";
+            log.error(message);
             return new ResponseEntity<String>(message,HttpStatus.BAD_REQUEST);
         }
         else if (!password.equals(password_repeat))
         {
             message = "\nError, las contraseñas no son iguales.";
+            log.error(message);
             return new ResponseEntity<String>(message,HttpStatus.BAD_REQUEST);
         }
         else if (location != null && !isAlphabetical(location))
         {
             message = "\nError, la localidad del usuario solo puede estar formada por letras.";
+            log.error(message);
             return new ResponseEntity<String>(message,HttpStatus.BAD_REQUEST);
         }
         else //todos los checks de seguridad garantizados, paso a verificar credenciales se lo paso al siguiente
@@ -109,11 +114,13 @@ public class UserController{
                 if(done)//si ha ido bien
                 {
                     message="Operacion realizada con exito, tu nueva localidad es: " + location;
+                    log.info(message);
                     return new ResponseEntity<String>(message,HttpStatus.OK);
                 }
                 else
                 {
                     message="Error, usuario y/o contraseña incorrectos";
+                    log.error(message);
                     return new ResponseEntity<String>(message,HttpStatus.BAD_REQUEST);
                 }
             }
@@ -121,6 +128,7 @@ public class UserController{
             { 
                 System.out.println(e);
                 message="Ha habido un error en el servidor, vuelva a intentarlo más tarde";
+                log.error(message);
                 return new ResponseEntity<String>(message,HttpStatus.SERVICE_UNAVAILABLE);
             }
         }
@@ -148,14 +156,14 @@ public class UserController{
         if (!isAlphanumeric(username))
         {
             message = "\nError, el nombre de usuario no puede contener caracteres especiales, solo puede estar formado por letras y numeros.";
-//            return new ResponseEntity<String>(message,HttpStatus.BAD_REQUEST);
+            log.error(message);
             return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
 
         }
         else if (!password.equals(password_repeat))
         {
             message = "\nError, las contraseñas no son iguales.";
-            //return new ResponseEntity<String>(message,HttpStatus.BAD_REQUEST);
+            log.error(message);
             return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
 
         }
@@ -170,14 +178,14 @@ public class UserController{
                 if(done)//si ha ido bien, es el
                 {
                     message="Inicio de sesión correcto.\n";
-                    //return new ResponseEntity<String>(message,HttpStatus.OK);
+                    log.info(message);
                     return new ResponseEntity<Boolean>(true,HttpStatus.OK);
 
                 }
                 else
                 {
                     message="Error, usuario y/o contraseña incorrectos";
-                    //return new ResponseEntity<String>(message,HttpStatus.BAD_REQUEST);
+                    log.error(message);                    
                     return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
 
                 }
@@ -186,7 +194,7 @@ public class UserController{
             { 
                 System.out.println(e);
                 message="Ha habido un error en el servidor";
-                //return new ResponseEntity<String>(message,HttpStatus.SERVICE_UNAVAILABLE);
+                log.error(message);                
                 return new ResponseEntity<Boolean>(false,HttpStatus.SERVICE_UNAVAILABLE);
 
             }        

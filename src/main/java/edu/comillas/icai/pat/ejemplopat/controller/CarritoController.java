@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.comillas.icai.pat.ejemplopat.dao.Carrito;
 import edu.comillas.icai.pat.ejemplopat.service.CarritoService;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
+@Slf4j
 public class CarritoController
 {
     @Autowired
@@ -21,6 +23,7 @@ public class CarritoController
     @PostMapping(path = "api/carrito")
     public ResponseEntity<Carrito> anadirCarrito(@RequestBody Carrito carrito)
     {
+        log.info("Accediendo a añaadirCarrito");
         Carrito newCarrito = carritoService.anadirCarrito(carrito); 
         return ResponseEntity.ok().body(newCarrito);
     }
@@ -28,6 +31,7 @@ public class CarritoController
     @GetMapping(path="api/getCarrito")
     public ResponseEntity<List<Carrito>> getAllCarrito()
     {
+        log.info("Accediendo a getAllCarrito");
         return ResponseEntity.ok().body(carritoService.getAllCarrito()); 
     }
 }

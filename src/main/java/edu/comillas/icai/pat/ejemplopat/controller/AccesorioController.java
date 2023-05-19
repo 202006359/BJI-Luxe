@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.comillas.icai.pat.ejemplopat.dao.AccesorioModel;
 import edu.comillas.icai.pat.ejemplopat.service.AccesorioService;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
+@Slf4j
 public class AccesorioController {
 
     @Autowired
@@ -23,6 +25,7 @@ public class AccesorioController {
     {
         //Si respondemos como un objeto, al hacer el json podremos acceder a sus propiedades sin tener que parsear manualmente
         //No hace falta metodo toJson
+        log.info("Accediendo a getAllAccesorios");
         return new ResponseEntity<ArrayList<AccesorioModel>>( accesorio_service.getAll(), HttpStatus.OK);
     }
 
@@ -31,9 +34,11 @@ public class AccesorioController {
     {
         if (id<300 || id>400)
         {
+            log.error("Error en getAccesorioById");
             return new ResponseEntity<AccesorioModel>(HttpStatus.BAD_REQUEST);
         }
         else{
+            log.info("Correcto acceso a getAccesorioById");
             return new ResponseEntity<AccesorioModel>(accesorio_service.getById(id), HttpStatus.OK);
         }
     }

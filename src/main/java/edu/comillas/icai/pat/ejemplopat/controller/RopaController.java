@@ -25,6 +25,7 @@ public class RopaController
     @GetMapping(path="api/ropaMujer")
     public ResponseEntity<List<Prenda>> getPrendas()
     {
+        log.info("Accediendo a getPrendas Moda Mujer");
         return ResponseEntity.ok().body(ropaService.getPrendas());
     }
 
@@ -32,13 +33,15 @@ public class RopaController
     @GetMapping(path="api/ropaHombre")
     public ResponseEntity<List<PrendaHombre>> getAllPrendrasHombre()
     {
-        log.info("Controller: Entrando en getAllPrendrasHombre");
+        log.info("Accediendo a getPrendas Moda Hombre");
         return ResponseEntity.ok().body(ropaService.getPrendasHombre());
     }
 
     @GetMapping("api/prenda/{id}")
     public ResponseEntity<Prenda> getPrendaById(@PathVariable Long id)
     {
+        log.info("Accediendo a getPredaById Moda Mujer");
+
         return new ResponseEntity<Prenda>(ropaService.getById(id), HttpStatus.OK);
         
     }
@@ -46,6 +49,7 @@ public class RopaController
     @GetMapping("api/prendaHombre/{id}")
     public ResponseEntity<PrendaHombre> getPrendaHombreById(@PathVariable Long id)
     {
+        log.info("Accediendo a getPredaById Moda Hombre");
         return new ResponseEntity<PrendaHombre>(ropaService.getPrendaHombreById(id), HttpStatus.OK);
         
     }

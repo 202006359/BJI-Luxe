@@ -13,7 +13,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,10 +23,13 @@ import edu.comillas.icai.pat.ejemplopat.dao.Carrito;
 import edu.comillas.icai.pat.ejemplopat.dao.Orden;
 import edu.comillas.icai.pat.ejemplopat.service.CarritoService;
 import edu.comillas.icai.pat.ejemplopat.service.OrdenService;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @RestController
+@Slf4j
 public class OrdenController {
 
     @Autowired
@@ -36,11 +38,13 @@ public class OrdenController {
     @PostMapping(path = "api/pedido")
     public ResponseEntity<Orden> anadirPedido(@RequestBody Orden pedidos)
     {
+        log.info("Accediendo a añadirPedido");
         return ResponseEntity.ok().body(pedidosService.anadirPedido(pedidos));
     }
 
     @DeleteMapping("api/delete/pedido")
     public void eliminartodo() {
+        log.info("Accediendo a eliminar pedido");
         pedidosService.deletePedido();
     }
 
@@ -60,6 +64,7 @@ public class OrdenController {
         try{
             response = restTemplate.exchange(usuariosUrl, HttpMethod.PUT, entity, Boolean.class);
         }catch(Exception e){
+            log.error("Las credenciales no son correctas");
             return new ResponseEntity<String>("Las credenciales no son correctas",HttpStatus.BAD_REQUEST);
         }
         boolean usuarioCorrecto = response.getBody();
@@ -115,10 +120,11 @@ public class OrdenController {
                 }
             }
 
-            
+            log.info("Pedido realizado con exito");
             return new ResponseEntity<String>("Pedido realizado con exito",HttpStatus.CREATED);
         }
         else{
+            log.error("Las credenciales no son correctas");
             return new ResponseEntity<String>("Error, credenciales del usuario erroneas",HttpStatus.BAD_REQUEST);
         }
     }
@@ -136,6 +142,7 @@ public class OrdenController {
         try{
             response = restTemplate.exchange(usuariosUrl, HttpMethod.PUT, entity, Boolean.class);
         }catch(Exception e){
+            log.error("Las credenciales no son correctas");
             return new ResponseEntity<ArrayList<Orden>>(HttpStatus.BAD_REQUEST);
         }
         boolean usuarioCorrecto = response.getBody();
@@ -161,9 +168,11 @@ public class OrdenController {
 
             ArrayList<Orden> orden_all= pedidosService.getByUserId(id_user);
 
+            log.info("Accediendo a getPedido");
             return new ResponseEntity<ArrayList<Orden>>(orden_all,HttpStatus.OK);
         }
         else{
+            log.error("Error al obtener el pedido");
             return new ResponseEntity<ArrayList<Orden>>(HttpStatus.BAD_REQUEST);
         }
     }

@@ -119,7 +119,6 @@ public class OrdenControllerE2ETest {
                         .andExpect(MockMvcResultMatchers.jsonPath("$[1].precio").value(15.0f));
 
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         
