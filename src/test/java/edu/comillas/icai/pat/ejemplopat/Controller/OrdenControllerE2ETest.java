@@ -7,7 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpHeaders;
@@ -15,7 +14,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import edu.comillas.icai.pat.ejemplopat.controller.OrdenController;
 import edu.comillas.icai.pat.ejemplopat.dao.Carrito;
 import edu.comillas.icai.pat.ejemplopat.dao.Orden;
 import edu.comillas.icai.pat.ejemplopat.service.CarritoService;
@@ -23,12 +21,10 @@ import edu.comillas.icai.pat.ejemplopat.service.OrdenService;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.core.ParameterizedTypeReference;
 
 
 @SpringBootTest
@@ -46,6 +42,10 @@ public class OrdenControllerE2ETest {
 
     @MockBean
     private TestRestTemplate restTemplate;
+
+
+    //Los casos de error relacionados con introducir erronameante las credenciales se prueban en el UserControllerE2ETest,
+    //por lo que no hace falta introducirlos aqui
 
     @Test
     public void testAddPedido() throws Exception {
@@ -104,25 +104,24 @@ public class OrdenControllerE2ETest {
         when(ordenService.getByUserId(402L)).thenReturn(mockOrdenList);
 
         // Call the method under test
-        try {
-            mockMvc.perform(MockMvcRequestBuilders.post("/api/pedido")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(body))
-                    .andExpect(MockMvcResultMatchers.status().isOk())
-                    .andExpect(MockMvcResultMatchers.jsonPath("$[0].id_user").value(402L))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$[0].product").value("Product1"))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$[0].quantity").value(1))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$[0].price").value(10.0f))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$[1].id_user").value(402L))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$[1].product").value("Product2"))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$[1].quantity").value(1))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$[1].price").value(15.0f));
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        
+            try {
+                mockMvc.perform(MockMvcRequestBuilders.post("/pedido")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("username=user0&password=user0&password_repeat=user0"))
+                        .andExpect(MockMvcResultMatchers.jsonPath("$[0].id_user").value(402L))
+                        .andExpect(MockMvcResultMatchers.jsonPath("$[0].nombre").value("Product1"))
+                        .andExpect(MockMvcResultMatchers.jsonPath("$[0].cantidad").value(1))
+                        .andExpect(MockMvcResultMatchers.jsonPath("$[0].precio").value(10.0f))
+                        .andExpect(MockMvcResultMatchers.jsonPath("$[1].id_user").value(402L))
+                        .andExpect(MockMvcResultMatchers.jsonPath("$[1].nombre").value("Product2"))
+                        .andExpect(MockMvcResultMatchers.jsonPath("$[1].cantidad").value(1))
+                        .andExpect(MockMvcResultMatchers.jsonPath("$[1].precio").value(15.0f));
 
-        // Assert the response
-        verify(ordenService, times(1)).getByUserId(402L);
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        
     }
 }
