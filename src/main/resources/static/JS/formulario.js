@@ -3,12 +3,12 @@ var check = function() {
       document.getElementById('password_repeat').value) {
       document.getElementById('message').style.color = 'green';
       document.getElementById('message').innerHTML = 'Las contrasenas son iguales';
-      document.getElementById("btn_submit").disabled = false;
+     //document.getElementById("btn_submit").disabled = false;
 
     } else {
       document.getElementById('message').style.color = 'red';
       document.getElementById('message').innerHTML = 'Las contrasenas NO son iguales';
-      document.getElementById("btn_submit").disabled = true;
+     //document.getElementById("btn_submit").disabled = true;
 
     }
   }
@@ -51,7 +51,7 @@ var check = function() {
     else if (passwordInput.value !== passwordRepeatInput.value) {
       document.getElementById('message').style.color = 'red';
       document.getElementById('message').innerHTML = 'Passwords do not match';
-      document.getElementById("btn_submit").disabled = true;
+      //document.getElementById("btn_submit").disabled = true;
       return false; // Prevent form submission
     }
   
