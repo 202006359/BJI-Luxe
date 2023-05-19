@@ -23,7 +23,8 @@ function cargarProductos()
             divProduct.className="produtLayout";
 
             let img= document.createElement("img");
-            img.src=ropaHombre[i]["url"];
+            yourByteArrayAsBase64 = ropaHombre[i]["photo"];
+            img.src = "data:image/png;base64," + yourByteArrayAsBase64;
             img.classList="photo";
             
             let title= document.createElement("h3");
@@ -92,5 +93,7 @@ function añadirAlCarrito(id)
         console.log(error);
     })
 };
+
+
 
 

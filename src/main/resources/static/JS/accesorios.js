@@ -23,7 +23,8 @@ function cargarProductos()
             divProduct.className="produtLayout";
 
             let img= document.createElement("img");
-            img.src=accesorios[i]["dir_image"];
+            yourByteArrayAsBase64 = accesorios[i]["photo"];
+            img.src = "data:image/png;base64," + yourByteArrayAsBase64;
             img.classList="photo";
             
             let title= document.createElement("h3");

@@ -7,8 +7,8 @@ import org.springframework.data.relational.core.mapping.Table;
 public class PrendaHombre extends Prenda{
 
 
-    public PrendaHombre(Long id, String nombre, String url, Float precio) {
-        super(id, nombre, url, precio);
+    public PrendaHombre(Long id, String nombre, byte[] photo, Float precio) {
+        super(id, nombre, photo, precio);
     }
 
     

@@ -15,16 +15,16 @@ public class Prenda
 	@Column("NOMBRE_P")
 	private String nombre;
 
-    @Column("URL")
-	private String url;
+    @Column("PHOTO")
+	private byte[] photo;
 
     @Column("PRECIO")
 	private Float precio;
 
-	public Prenda(Long id, String nombre, String url, Float precio) {
+	public Prenda(Long id, String nombre, byte[] photo, Float precio) {
         this.id= id;
 		this.nombre = nombre;
-		this.url=url;
+		this.photo=photo;
 		this.precio = precio;
 
 	}

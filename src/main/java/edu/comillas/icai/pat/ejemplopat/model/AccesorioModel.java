@@ -14,8 +14,8 @@ public class AccesorioModel{
     @Column("NOMBRE")
     private String nombre;
 
-    @Column("DIR_IMAGE")
-    private String dir_image;
+    @Column("PHOTO")
+    private byte[] photo;
 
     @Column("PRECIO")
     private float precio;
@@ -41,12 +41,12 @@ public class AccesorioModel{
         this.nombre = nombre;
     }
 
-    public String getDir_image() {
-        return dir_image;
+    public byte[] getPhoto() {
+        return photo;
     }
 
-    public void setDir_image(String dir_image) {
-        this.dir_image = dir_image;
+    public void setPhoto(byte[] dir_image) {
+        this.photo = dir_image;
     }
 
     public float getPrecio() {
@@ -87,7 +87,7 @@ public class AccesorioModel{
 
     @Override
     public String toString() {
-        return "[id=" + id + ", nombre=" + nombre + ", dir_image=" + dir_image + ", precio=" + precio
+        return "[id=" + id + ", nombre=" + nombre + ", dir_image=" + photo + ", precio=" + precio
                 + "]";
     }
 
@@ -95,7 +95,7 @@ public class AccesorioModel{
         String json = "{";
         json += "\"id\":" + id + ",";
         json += "\"nombre\":\"" + nombre + "\",";
-        json += "\"dir_image\":\"" + dir_image + "\",";
+        json += "\"dir_image\":\"" + photo + "\",";
         json += "\"precio\":" + precio;
         json += "}";
         return json;
