@@ -297,6 +297,11 @@ button#boton_buscar:hover{
 }
 
 
+#centered{
+  text-align: center;
+}
+
+
 
 .boton_lista{
   padding:1px;
