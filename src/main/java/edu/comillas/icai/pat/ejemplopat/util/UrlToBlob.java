@@ -37,7 +37,7 @@ public class UrlToBlob {
         String foto = bytesToHex(photoBytes);
         //System.out.println(foto);
 
-        saveToFile(foto,"ficheroHexFoto.txt");
+        //saveToFile(foto,"ficheroHexFoto.txt");
 
         }catch(Exception e){
             e.printStackTrace();
