@@ -498,6 +498,80 @@ public class UserControllerE2ETest {  //E2E = End to End
 
 
 
+    @Test
+    void checkCredencialesTest()
+    {
+        //Operacion correcta
+    
+        //WHEN
+        String usuario="user0";
+        String password="user0";
+        String password_repeat="user0";
+        String httpBody="username="+usuario+"&password="+password+"&password_repeat="+password_repeat;
+        String url="http://localhost:"+Integer.toString(port)+"/verify_user";
+        HttpEntity<String> entity= new HttpEntity<>(httpBody);
+
+        //Given
+        ResponseEntity<Boolean> resul= restTemplate.exchange(
+            url,
+            HttpMethod.PUT,
+            entity,
+            new ParameterizedTypeReference<Boolean>(){});
+
+        //then
+
+        then(resul.getStatusCode()).isEqualTo(HttpStatus.OK);
+        then(resul.getBody()).isEqualTo(true);
+
+
+        //Usuario no tiene esa contraseña
+
+        //WHEN
+        usuario="user0";
+        password="20";
+        password_repeat="20";
+        httpBody="username="+usuario+"&password="+password+"&password_repeat="+password_repeat;
+        url="http://localhost:"+Integer.toString(port)+"/verify_user";
+        entity= new HttpEntity<>(httpBody);
+
+        //Given
+        resul= restTemplate.exchange(
+            url,
+            HttpMethod.PUT,
+            entity,
+            new ParameterizedTypeReference<Boolean>(){});
+
+        //then
+
+        then(resul.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        then(resul.getBody()).isEqualTo(false);
+
+
+        //Contraseñas no son iguales
+        usuario="user0";
+        password="userrrrrrrrrrrrrrr0";
+        password_repeat="user0";
+        httpBody="username="+usuario+"&password="+password+"&password_repeat="+password_repeat;
+        url="http://localhost:"+Integer.toString(port)+"/verify_user";
+        entity= new HttpEntity<>(httpBody);
+
+        //Given
+        resul= restTemplate.exchange(
+            url,
+            HttpMethod.PUT,
+            entity,
+            new ParameterizedTypeReference<Boolean>(){});
+
+        //then
+
+        then(resul.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        then(resul.getBody()).isEqualTo(false);
+
+            
+    }
+
+
+
 }
 
 
