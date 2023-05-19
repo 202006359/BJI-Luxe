@@ -92,8 +92,7 @@ password_repeatInput.addEventListener('keypress', function(event) {
     }
 });
 
-  var btn_submit= document.getElementById("btn_submit");
-btn_submit.addEventListener("click",createUser);
+
 
 function createUser()
 {
