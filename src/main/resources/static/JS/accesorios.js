@@ -6,7 +6,7 @@ function cargarProductos()
     var div=document.getElementById("div_productos");
     div.innerHTML="";
 
-    fetch("/accesorios",{method:"GET"})
+    fetch("http://localhost:8080/accesorios",{method:"GET"})
     .then(function(res){
         return res.text();
     })
@@ -67,7 +67,7 @@ body.addEventListener(onload, cargarProductos());
 
 function añadirAlCarrito(id)
 {
-    fetch("/accesorio/"+id,{method: "GET"})
+    fetch("/accesorio/"+ id,{method: "GET"})
     .then(function(res){
         return res.text();
     })

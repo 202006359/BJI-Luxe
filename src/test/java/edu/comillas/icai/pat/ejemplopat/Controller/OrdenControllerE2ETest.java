@@ -23,8 +23,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.web.client.RestTemplate;
+
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -72,7 +71,7 @@ public class OrdenControllerE2ETest {
                 .andExpect(MockMvcResultMatchers.content().string("Pedido realizado con exito"));
 
         // Verify the pedidosService.insertOrden() method is called with the expected Orden objects
-        verify(ordenService, times(1)).insertOrden(new Orden(402L, 1L, "Product1", 1));
-        verify(ordenService, times(1)).insertOrden(new Orden(402L, 2L, "Product2", 1));
+        verify(ordenService, times(1)).insertOrden(new Orden(402L, 1L, "Product1", 1,10.0f));
+        verify(ordenService, times(1)).insertOrden(new Orden(402L, 2L, "Product2", 1,15.0f));
     }
 }

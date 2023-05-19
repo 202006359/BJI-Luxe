@@ -98,12 +98,13 @@ public class OrdenController {
             for (Carrito carrito : carrito_all) {
                 Long id_prod = carrito.getId_producto();
                 String nombre = carrito.getNombre();
+                Float precio = carrito.getPrecio();
                       
                 int quantity = carritoQuantities.get(id_prod);
 
                 if (!processedIds.contains(id_prod)){
                     // Create an Order object
-                    Orden orden = new Orden(id_user,id_prod, nombre, quantity);
+                    Orden orden = new Orden(id_user,id_prod, nombre, quantity, precio*quantity);
 
                     // Save the Order using the pedidosService
                     pedidosService.insertOrden(orden);

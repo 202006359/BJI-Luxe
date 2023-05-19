@@ -11,12 +11,13 @@ public interface OrdenRepository extends CrudRepository<Orden,Long>{
 
     @Modifying
     @Query("INSERT INTO PEDIDOS (ID_USER, ID_PROD, NOMBRE_P, CANTIDAD) " + 
-    "VALUES (:id_user, :id_prod, :nombre, :cantidad)" )
+    "VALUES (:id_user, :id_prod, :nombre, :cantidad, :precio)" )
     public void insertOrden(
         @Param("id_user") Long id_user,
         @Param("id_prod") Long id_prod,
         @Param("nombre") String nombre,
-        @Param("cantidad") Integer cantidad);
+        @Param("cantidad") Integer cantidad,
+        @Param("precio") Float precio);
 
 
 }
