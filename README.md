@@ -26,6 +26,8 @@ Ejecutar microservicio en una terminal
 
 ## Operaciones disponibles
 
+**Importante: Para probar las operaciones disponibles se recomienda usar el usuario *user0* con contraseña *user0*. 
+
 Mostrar página principal 
 > http://localhost:8080/index.html
 
