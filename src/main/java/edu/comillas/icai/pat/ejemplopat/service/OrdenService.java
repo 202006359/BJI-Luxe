@@ -8,13 +8,15 @@ import edu.comillas.icai.pat.ejemplopat.dao.Orden;
 
 public interface OrdenService 
 {
-   @Transactional
+    @Transactional
     void insertOrden(Orden pedidos);
 
     @Transactional
     Orden anadirPedido(Orden pedido);
 
+    @Transactional
     void deletePedido();
     ArrayList<Orden> getByUserId(long id);
 
 }
+

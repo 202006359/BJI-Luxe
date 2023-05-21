@@ -574,32 +574,3 @@ public class UserControllerE2ETest {  //E2E = End to End
 
 }
 
-
-    /*
-    @Test
-    public void GetAllUsersTest()
-    {
-        Iterable<UserModel> users=userRepository.findAll();
-
-        //When  -> aqui ponemos las condiciones de nuestra prueba
-        String url = "http://localhost:"+Integer.toString(port) + "/users";
-        HttpHeaders headers= new HttpHeaders(); //no tengo header en este
-        HttpEntity<String> entity= new HttpEntity<>(headers); //esto es como lo que meto en postman
-        //de esta llamada de postman, yo espero que me llegue la lista completa de usuarios que tengo
-
-
-
-        //Given -> Ejecuto la prueba
-        ResponseEntity<Iterable<UserModel>> results = restTemplate.exchange(
-            url,  //a que URL llamo
-            HttpMethod.GET, //Que metodo uso
-            entity, //Cual es el HTTP que le envio
-            new ParameterizedTypeReference<Iterable<UserModel>>(){} ); //Que formato quiero para mi respuesta
-
-
-
-        //Check results
-        then(results.getStatusCode()).isEqualTo(HttpStatus.OK);
-        then(results.getBody()).isEqualTo(users);
-    }
-*/

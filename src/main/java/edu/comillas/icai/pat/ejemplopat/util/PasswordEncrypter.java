@@ -9,7 +9,7 @@ import javax.crypto.spec.DESedeKeySpec;
 import org.apache.tomcat.util.codec.binary.Base64;
 
 /***
- * Class that encrypts and decrypts string using base64
+ * Class that encrypts and decrypts string using base64. La usamos para las contraseñas de los usuarios.
  */
 public class PasswordEncrypter {
     private static final String UNICODE_FORMAT = "UTF8";

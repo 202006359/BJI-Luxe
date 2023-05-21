@@ -1,6 +1,7 @@
 package edu.comillas.icai.pat.ejemplopat.Controller;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,6 +22,7 @@ import edu.comillas.icai.pat.ejemplopat.service.OrdenService;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -123,4 +125,12 @@ public class OrdenControllerE2ETest {
             }
         
     }
+
+    //Error 404
+    @Test
+    public void testOrdenEndPointNotFound() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.put("/api/BAD_ENDPOINT"))
+                .andExpect(MockMvcResultMatchers.status().isNotFound());
+    }
+
 }

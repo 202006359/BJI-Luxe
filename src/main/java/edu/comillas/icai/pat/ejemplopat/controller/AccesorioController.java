@@ -30,10 +30,9 @@ public class AccesorioController {
     }
 
     @GetMapping("/accesorio/{id}")
-    public ResponseEntity<AccesorioModel> getAccesorioById(@PathVariable Long id)
-    {
-        if (id<300 || id>400)
-        {
+    public ResponseEntity<AccesorioModel> getAccesorioById(@PathVariable Long id){
+       
+        if (id<300 || id>400){
             log.error("Error en getAccesorioById");
             return new ResponseEntity<AccesorioModel>(HttpStatus.BAD_REQUEST);
         }

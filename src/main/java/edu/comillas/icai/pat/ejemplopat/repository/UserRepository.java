@@ -54,12 +54,5 @@ public interface UserRepository extends CrudRepository<UserModel, Long>{
     public void deleteUser(@Param("username") String username);
      //Delete borra filas, no columnas. Por ello ponemos DELETE FROM... y |no| DELETE * FROM ...
 
-    /*     @Transactional
-    @Query("SELECT COUNT(u) FROM Usuario u WHERE u.nombre = :nombre AND u.password = :password")
-    int verificarUsuario(@Param("nombre") String nombre, @Param("password") String password);
-    Devuelve un numero >0 si hay usuarios con este nombre y contraseña
-*/
-
-
      
 }
