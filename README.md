@@ -1,5 +1,6 @@
 ## BJI Luxe - Proyecto Final PAT
 En este trabajo se ha realizado una tienda online de diferentes tipos de productos. Las ventas se han dividido en multiples páginas a las que se accede a través de una barra de navegación. El procedimiento para realizar una compra es sencillo y se detalla a continuación. El usuario, no autenticado inicialmente, puede navegar por la página visualizando los productos y añadirlos a su carrito de compra. Una vez ha finalizado, para poder pagar los productos añadidos a dicho carrito, deberá introducir su clave y contraseña que serán verificados por el sistema. En caso de ser correctos se realizará el pago. En caso contrario, será necesaria la creación de una cuenta para realizar la compra. Como se ha indicado, la página no tiene inicialmente ningún requerimiento para entrar y ver sus productos, esto se debe a que se pretende conseguir el mayor número de clientes.
+**AUTORES:** **B**eatriz Ordoñez, **J**avier del Águila e **I**ván Sánchez.
 
 ## Estructura del proyecto (Scaffolding)
 
